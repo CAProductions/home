@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>My Webpage</title>
+        <style>
+            body{
+                background-color:Black;
+                color:white;
+                text-align:left;
+            }
+            .code{
+                padding:0px 10px;
+                background-color:black;
+                border:3px solid white;
+                border-radius:7px;
+                color:white;
+                text-align:left;
+                width:500px;
+                height:200px;
+                overflow-x:auto;
+                overflow-y:auto;
+            }
+            .codeex{
+                 padding:0px 10px;
+                border:3px solid white;
+                border-radius:7px;
+                text-align:left;
+                width:500px;
+                height:200px;
+                overflow-x:auto;
+                overflow-y:auto;
+            }
+            .header{
+                padding:6px 6px;
+                background-color:rgb(255, 10, 10);
+                border-radius:7px;
+                border-width:103;
+                color:white;
+            }
+            .navi_link{
+                text-decoration:none;
+                color:white;
+            }
+        </style>
+    </head>
+    <body>
+   <h1 class="header" style="background-color:red; position:fixed; top:-5px; z-index:100;">CAProductions HTML Tutorial</h1>
+   <h1 class="header" style="background-color:red; position:fixed; right:10px; top:-5px; z-index:101; "><a href="/home/" style="text-decoration:none; color:white;">Back To Home Page</a></h1>
+   <details class="header" style="background-color:red; position:fixed; right:350px; top:20px; z-index:102; font-size:2em; ">
+       <summary>
+           <b>Jump To</b>
+       </summary>
+      <ul>
+          <li><a class="navi_link" href="#top">Top</a></li>
+          <li><a class="navi_link" href="#l1">Lesson 1: The &lt;p> tag</a></li>
+          <li><a class="navi_link" href="#l2">Lesson 2: The &lt;br> tag</a></li>
+          <li><a class="navi_link" href="#l3">Lesson 3: Ending tags</a></li>
+          <li><a class="navi_link" href="#l4">Lesson 4: Headers</a></li>
+      </ul>
+   </details>
+  <br><br><br><br><br> <h2 id="top">A Step To Step Guide on HTML Webpage Design</h2>
+   <p>When You first Start off with a new Website Add this Base to it</p>
+   <br>
+   <div class="code"><p>&lt;!DOCTYPE html>
+   <br>
+   &lt;html>
+   <br>
+   &lt;head>
+   <br>
+   &lt;meta charset="utf-8">
+   <br>
+   &lt;title>Example&lt;/title>
+   <br>
+   &lt;/head>
+   <br>
+   &lt;body>
+   <br>
+   <br>
+   &lt;/body>
+   <br>
+   &lt;/html>
+   </p></div>
+   <p>It might Not Make Much Sense Right Now But It Will Soon.</p>
+   <h3 id="l1">Lesson 1: The &lt;p> tag</h3>
+   <p>The &lt;P> Tag Is One Of the greatest in the website designers toolbox, infact you are reading text created by it right now!<br>If You havn't Guessed Already the &lt;p> Tag Makes A Paragraph On The Webpage, The "&lt;" At the Begging And end of it signal<br>The Computer That it is a tag, if you dont use them then your code will not work.<br>Lets Add One To Our Code Right Now, Put A &lt;p> Tag Right Below Your &lt;Body> Tag:</p>
+   <br>
+   <div class="code"><p>&lt;!DOCTYPE html>
+   <br>
+   &lt;html>
+   <br>
+   &lt;head>
+   <br>
+   &lt;meta charset="utf-8">
+   <br>
+   &lt;title>Example&lt;/title>
+   <br>
+   &lt;/head>
+   <br>
+   &lt;body>
+   <br>
+   &lt;p>
+   <br>
+   &lt;/body>
+   <br>
+   &lt;/html>
+   </p></div>
+   <br><p>Now Put Any Text After It.<br>Hopefully It Worked But Now Another Issue Arises "How Do I Create Line Breaks?" You can't Just Press Enter Because The Computer<br> Dosnt Recongnize that. In This Case We Need:</p>
+ <h3 id="l2">Lesson 2: The &lt;br> tag</h3>
+ <p>If You Want To Create A Line Break In Your Text You Could Either:</p>
+ <ul>
+     <li>Use A &lt;/p> to End The Paragraph (more on that later)</li>
+     <li>Use The &lt;br> Tag to Create A Linebreak</li>
+     <li>Give Up and Face defeat</li>
+ </ul>
+ <p>In My Personal Opinion I Would Use The &lt;br> Tag But Ending The Paragraph and starting a new one also works.<br>Here Is An Example Of How To Use A Line Break:</p>
+<div class="code"><p>&lt;!DOCTYPE html>
+   <br>
+   &lt;html>
+   <br>
+   &lt;head>
+   <br>
+   &lt;meta charset="utf-8">
+   <br>
+   &lt;title>Example&lt;/title>
+   <br>
+   &lt;/head>
+   <br>
+   &lt;body>
+   <br>
+   &lt;p>Jhon slamed The Door Shut &lt;br> He Was So Mad That He Was Beaten By A 3rd Grader
+   <br>
+   &lt;/body>
+   <br>
+   &lt;/html>
+   </p></div>
+   <p>Here's What That Would Look Like:</p>
+   <div class="codeex"><p>Jhon slamed The Door Shut<br> He Was So Mad That He Was Beaten By A 3rd Grader
+   </p></div>
+   <h3 id="l3">Lesson 3: Ending tags</h3>
+   <p>Remember How Earlier I was talking About ending the paragraph and starting a new one instead of using a line break?<br> Adding a "/" before the letters in a tag creates an ending tag, Most tags need these to function proporly<br>One Of the only tags that doesnt is the &lt;br> Tag. This is Usefull For things such as adding headers and many other HTML <br>Tags Afterward. Having A Ending Tag can also Make A New Paragraph Just like the &lt;br> Tag although it is much easier to use the<br>&lt;br> Tag. <br> Here Is an example of when you could use an ending tag instead of a &lt;br> tag:</p>
+   <div class="code"><p>&lt;!DOCTYPE html>
+   <br>
+   &lt;html>
+   <br>
+   &lt;head>
+   <br>
+   &lt;meta charset="utf-8">
+   <br>
+   &lt;title>Example&lt;/title>
+   <br>
+   &lt;/head>
+   <br>
+   &lt;body>
+   <br>
+   &lt;p>Jhon slamed The Door Shut &lt;br> He Was So Mad That He Was Beaten By A 3rd Grader&lt;/p>
+   <br>
+   &lt;p>"Are you okay up There?" His Mom Called&lt;/p>
+   <br>
+   &lt;p>"Doing Great" Jhon said Sarcasticly&lt;/p>
+   <br>
+   &lt;/body>
+   <br>
+   &lt;/html>
+   </p></div>
+   <p>Here's What it would look like:</p>
+   <div class="codeex"><p>Jhon slamed The Door Shut<br>
+He Was So Mad That He Was Beaten By A 3rd Grader</p>
+
+<p>"Are you okay up There?" His Mom Called</p>
+
+<p>"Doing Great" Jhon said Sarcasticly</p>
+   </div>
+   <h3 id="l4">Lesson 4: Headers</h3>
+    </body>
+</html>
