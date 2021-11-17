@@ -2,19 +2,20 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>My Webpage</title>
+        <title>CA - Learn HTML</title>
         <style>
             body{
-                background-color:Black;
+                background-color:black;
                 color:white;
                 text-align:left;
             }
+            #body{
+                padding:0px 30px;
+            }
             .code{
                 padding:0px 10px;
-                background-color:black;
                 border:3px solid white;
                 border-radius:7px;
-                color:white;
                 text-align:left;
                 width:500px;
                 height:200px;
@@ -42,24 +43,37 @@
                 text-decoration:none;
                 color:white;
             }
+            #jump_to_scroll{
+                overflow-y:auto;
+                height:300px;
+                background-color:maroon;
+                 border-radius:7px;
+                 padding:10px;
+            }
         </style>
     </head>
     <body>
    <h1 class="header" style="background-color:red; position:fixed; top:-5px; z-index:100;">CAProductions HTML Tutorial</h1>
    <h1 class="header" style="background-color:red; position:fixed; right:10px; top:-5px; z-index:101; "><a href="/home/" style="text-decoration:none; color:white;">Back To Home Page</a></h1>
-   <details class="header" style="background-color:red; position:fixed; right:500px; top:20px; z-index:102; font-size:2em; ">
+   <details class="header" style="background-color:red; position:fixed; right:320px; top:17px; z-index:102; font-size:2em; ">
        <summary>
            <b>Jump To</b>
        </summary>
-      <ul>
+      <div id="jump_to_scroll"><ul>
           <li><a class="navi_link" href="#top">Top</a></li>
           <li><a class="navi_link" href="#l1">Lesson 1: The &lt;p> tag</a></li>
           <li><a class="navi_link" href="#l2">Lesson 2: The &lt;br> tag</a></li>
           <li><a class="navi_link" href="#l3">Lesson 3: Ending tags</a></li>
           <li><a class="navi_link" href="#l4">Lesson 4: Headers</a></li>
-      </ul>
+		  <li><a class="navi_link" href="#l5">Lesson 5: CSS</a></li>
+    	 <li><a class="navi_link" href="#l6">Lesson 6: Id Selectors</a></li>
+    	 <li><a class="navi_link" href="#l7">Lesson 7: Other CSS Tags</a></li>
+    	 <li>--COMMING SOON!--</li>
+    	 <li><a class="navi_link" href="#l8">Lesson 8: Orginized Lists</a></li>
+    	 <li><a class="navi_link" href="#l9">Lesson 9: Unorginized Lists</a></li>
+      </ul></div>
    </details>
-  <br><br><br><br><br> <h2 id="top">A Step To Step Guide on HTML Webpage Design</h2>
+  <div id="body"><br><br><br><br><br> <h2 id="top">A Step To Step Guide on HTML Webpage Design</h2>
    <p>When You first Start off with a new Website Add this Base to it</p>
    <br>
    <div class="code"><p>&lt;!DOCTYPE html>
@@ -288,6 +302,124 @@ He Was So Mad That He Was Beaten By A 3rd Grader</p>
 <p>"Are you okay up There?" His Mom Called</p>
 <p>"Doing Great" Jhon said Sarcasticly</p>
    </div>
+	<h3 id="l6">Lesson 6: Id Selectors</h3>
+	<p> if you only want to change the style of one paragraph or header you can use an id. if you were to use one in a paragraph the tag would look like: &lt;p id="p1">. Then In your style section you can refrence just that id using #youridname then all the stuff you would normally out after it here is an example:</p>
+	<div class="code"><p>&lt;!DOCTYPE html>
+   <br>
+   &lt;html>
+   <br>
+   &lt;head>
+   <br>
+   &lt;meta charset="utf-8">
+   <br>
+   &lt;title>Example&lt;/title>
+   <br>
+	&lt;style>
+	<br>
+	#red{
+	<br>
+	color:rgb(255, 0, 0);
+	<br>
+	}
+	<br>
+	#green{
+	<br>
+	color:rgb(0, 255, 0);
+	<br>
+	}
+	<br>
+	#blue{
+	<br>
+	color:rgb(0, 0, 255);
+	<br>
+	}
+	<br>
+	&lt;/style>
+	<br>
+   &lt;/head>
+   <br>
+   &lt;body>
+	<br>
+	&lt;p id="red">This Text Is Red&lt;/p><br>
+	&lt;p id="green">This Text Is Green&lt;/p><br>
+	&lt;p id="blue">This Text Is Blue&lt;/p><br>
+	&lt;/body>
+   <br>
+   &lt;/html>
+   </p></div>
+   
+   <p> This Is what that would look like:</p>
+   <div class="codeex"><p style="color:rgb(255, 0, 0);">This Text Is Red</p><p style="color:rgb(0, 255, 0);">This Text Is Green</p><p style="color:rgb(0, 0, 255);">This Text Is Blue</p></div>
 	
-    </body>
+	<h3 id="l7">Lesson 7: Other CSS Tags</h3>
+	<p>Background-color and color anrnt the only CSS Tags, Here is a list of other usefull tags for text:</p>
+	<ul>
+	<li>text-size:10px;</li>
+	<li>text-decoration:underline;</li>
+	<li>text-align:center;</li>
+	<li>font-weight:bold;</li>
+	</ul>
+	<p>Those Are Just A Few Of The Other Tags You Could Use<br>Here Are Some Ways to use them:</p>
+	<div class="code"><p>&lt;!DOCTYPE html>
+   <br>
+   &lt;html>
+   <br>
+   &lt;head>
+   <br>
+   &lt;meta charset="utf-8">
+   <br>
+   &lt;title>Example&lt;/title>
+   <br>
+	&lt;style>
+	<br>
+	#font-size{
+	<br>
+	font-size:40px;
+	<br>
+	}
+	<br>
+	#text-decoration{
+	<br>
+	text-decoration:underline;
+	<br>
+	}
+	<br>
+	#text-align{
+	<br>
+	text-align:center;
+	<br>
+	}
+	<br>
+	#font-weight{
+	<br>
+	font-weight:bold;
+	<br>
+	}
+	<br>
+	&lt;/style>
+	<br>
+   &lt;/head>
+   <br>
+   &lt;body>
+	<br>
+	&lt;p id="font-size">font-size&lt;/p>
+	<br>
+	&lt;p id="text-decoration">text-decoration&lt;/p>
+	<br>
+	&lt;p id="text-align">text-align&lt;/p>
+	<br>
+	&lt;p id="font-weight">font-weight&lt;/p>
+	<br>
+	&lt;/body>
+   <br>
+   &lt;/html>
+   </p></div>
+   <p>Here's What That Would Look Like</p>
+	 <div class="codeex"><p style="font-size:40px;">font-size</p>
+<p style="text-decoration:underline;">text-decoration</p>
+<p style="text-align:center;">text-align</p>
+<p style="font-weight:bold;">font-weight</p></div>
+	<h3 id="l8">Lesson 8: Orginized Lists</h3>
+	<h3 id="l9">Lesson 9: Unorginized Lists</h3>
+    </div> </body>
 </html>
