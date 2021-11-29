@@ -12,6 +12,18 @@
             #body{
                 padding:0px 30px;
             }
+				#footer{
+					background-color:maroon;
+					padding:;
+				}
+				a{
+				color:white;
+				font-weight:bold;
+				text-decoration:none;
+				}
+				a:hover{
+				text-decoration:underline;
+				}
             .code{
                 padding:0px 10px;
                 border:3px solid white;
@@ -22,6 +34,9 @@
                 overflow-x:auto;
                 overflow-y:auto;
             }
+				.code:hover{
+					 background-color:rgb(40, 40, 40);
+				}
             .codeex{
                  padding:0px 10px;
                 border:3px solid white;
@@ -36,7 +51,7 @@
                 padding:6px 6px;
                 background-color:rgb(255, 10, 10);
                 border-radius:7px;
-                border-width:103;
+                border-width:103px;
                 color:white;
             }
             .navi_link{
@@ -50,11 +65,28 @@
                  border-radius:7px;
                  padding:10px;
             }
+				#page_zoom{
+					border-radius:7px;
+					background-color:black;
+					padding:5px;
+					text-align:center;
+				}
+				#got_it{
+				background-color:red;
+				}
+				#got_it:hover{
+				background-color:rgb(255, 90, 90);
+				}
         </style>
     </head>
     <body>
    <h1 class="header" style="background-color:red; position:fixed; top:-5px; z-index:100;">CAProductions HTML Tutorial</h1>
+	
    <h1 class="header" style="background-color:red; position:fixed; right:10px; top:-5px; z-index:101; "><a href="/home/" style="text-decoration:none; color:white;">Back To Home Page</a></h1>
+	
+	<div id="page_zoom" onclick="this.style.display='none'" style="display:block; font-size:40px; position:fixed; top:50%; left:50%; border:20px solid white; transform: translate(-50%, -50%);"><h3>Set page zoom to 100%</h3><p>To get the best experience out of our website we recomend that you set the page zoom to 100%.</p>
+	<p id="got_it" style="border:1px solid white; border-radius:7px; text-align:center; width:50%; text-align:center; transform: translate(50%, 50%);">Got it!</p></div>
+	
    <details class="header" style="background-color:red; position:fixed; right:420px; top:17px; z-index:102; font-size:2em; ">
        <summary>
            <b>Jump To</b>
@@ -420,6 +452,14 @@ He Was So Mad That He Was Beaten By A 3rd Grader</p>
 <p style="text-align:center;">text-align</p>
 <p style="font-weight:bold;">font-weight</p></div>
 	<h3 id="l8">Lesson 8: Orginized Lists</h3>
+	<p>If You Want To Make A List There Are 2 Ways to do it, You Can Either Use A Orginized List:
+	<ol>
+	<li>Nintendo</li>
+	<li>Xbox</li>
+	<li>Playstation</li>
+	</ol>
+	Or you could use an unorginized list. <br>To Start An orginized list use the &lt;ol> 
 	<h3 id="l9">Lesson 9: Unorginized Lists</h3>
-    </div> </body>
+    </div><div id="footer"><p>Big Thanks to <a href="https://pikapower9080.github.io/">Pikapower9080</a> For Teaching Me The Ins And Out's Of HTML, Check Them Out If you get the chance.<br><p>Well, Thats All For Now. If you have any ideas for things i could add then <span title="No, My DM's Are not open. Infact i dont even have any DMs.">my DMs are open</span></p>
+	 </div></body>
 </html>
