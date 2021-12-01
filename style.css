@@ -1,0 +1,17 @@
+/* 
+    Global stylesheet, should apply to most if not all pages pages 
+    To apply these rules to a page, add  <link rel="stylesheet" href="/style.css"> to the head tag.
+*/
+
+/* Import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Overpass+Mono:wght@300&display=swap');
+
+body{
+    font-family: 'Open Sans', 'Overpass Mono', monospace;
+}
+
+/* Applies to scratch projects, mainly makes the fit the screen. */
+.scratchframe{
+    width: 98vw;
+    height: 80vh;
+}
