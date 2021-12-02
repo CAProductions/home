@@ -77,19 +77,25 @@
 				#got_it:hover{
 				background-color:rgb(255, 90, 90);
 				}
+				details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
         </style>
 		  <link rel="icon" href="assets/main/favicon-96.png">
 
     </head>
     <body>
-   <h1 class="header" style="background-color:red; position:fixed; top:-5px; z-index:100;">CAProductions HTML Tutorial</h1>
+   <h1 class="header" style="background-color:red; position:fixed; top:-5px; z-index:100;"><img src="https://caproductions.github.io/home/assets/main/favicon-24.png" width="20">CAProductions HTML Tutorial</h1>
 	
    <h1 class="header" style="background-color:red; position:fixed; right:10px; top:-5px; z-index:101; "><a href="/home/" style="text-decoration:none; color:white;">Back to Home Page</a></h1>
 	
 	<div id="page_zoom" onclick="this.style.display='none'" style="display:block; font-size:40px; position:fixed; top:50%; left:50%; border:20px solid white; transform: translate(-50%, -50%);"><h3>Set page zoom to 100%</h3><p>To get the best experience out of our website we recommend that you set the page zoom to 100%.</p>
 	<p id="got_it" style="border:1px solid white; border-radius:7px; text-align:center; width:50%; text-align:center; transform: translate(50%, 50%);">Got it!</p></div>
 	
-    <details class="header" style="background-color:red; position:fixed; right:420px; top:17px; z-index:102; font-size:2em; ">
+    <details class="header" style="background-color:red; position:fixed; right:320px; top:11px; z-index:102; font-size:2em; ">
        <summary>
            <b>Jump To</b>
        </summary>
@@ -102,9 +108,15 @@
 		  <li><a class="navi_link" href="#l5">Lesson 5: CSS</a></li>
     	 <li><a class="navi_link" href="#l6">Lesson 6: Id Selectors</a></li>
     	 <li><a class="navi_link" href="#l7">Lesson 7: Other CSS Tags</a></li>
-    	 <li>--COMMING SOON!--</li>
     	 <li><a class="navi_link" href="#l8">Lesson 8: Orginized Lists</a></li>
     	 <li><a class="navi_link" href="#l9">Lesson 9: Unorginized Lists</a></li>
+		 <li><a class="navi_link" href="#l10">Lesson 10: Images</a></li>
+		 <li>Comming Soon!</li>
+		 <li><a class="navi_link" href="#l11">Lesson 11: Links</a></li>
+    	 <li><a class="navi_link" href="#l12">Lesson 12: Customizing links with CSS</a></li>
+		 <li><a class="navi_link" href="#l13">Lesson 13: The &lt;span> and &lt;div> tags </a></li>
+		 <li><a class="navi_link" href="#l14">Lesson 14: Borders </a></li>
+		 
       </ul></div>
    </details>
   <div id="body"><br><br><br><br><br> <h2 id="top">A step to step guide on HTML web page design</h2>
@@ -130,7 +142,7 @@
    &lt;/html>
    </p></div>
    <p>It might not make much sense right now but it will soon.</p>
-   <h3 id="l1">Lesson 1:the&lt;p> tag</h3>
+   <h3 id="l1">Lesson 1: The &lt;p> tag</h3>
    <p>The &lt;P> tag is one of the greatest in the website designers toolbox, in fact you are reading text created by it right now!<br>If you haven't guessed already the &lt;p> tag makes a paragraph on the webpage, the "&lt;" at the beginning and end of it signal<br>the computer that it is a tag, if you don't use them then your code will not work.<br>Lets add one to our code right now, put a &lt;p> tag right below your &lt;body> tag:</p>
    <br>
    <div class="code"><p>&lt;!DOCTYPE html>
@@ -154,7 +166,7 @@
    &lt;/html>
    </p></div>
    <br><p>now put any text after it.<br>hopefully it worked but now another issue arises "how do I create line breaks?" You can't just press enter because the computer<br> doesn't recognize that. In this case we need:</p>
- <h3 id="l2">Lesson 2:the&lt;br> tag</h3>
+ <h3 id="l2">Lesson 2: The &lt;br> tag</h3>
  <p>If you want to create a line break in your text you could either:</p>
  <ul>
      <li>Use a &lt;/p> to end the paragraph (more on that later)</li>
@@ -220,7 +232,7 @@ He was so mad that he was beaten by a 3rd grader</p>
 <p>"Doing great" John said sarcastically</p>
    </div>
    <h3 id="l4">Lesson 4: Headers</h3>
-	<p>So right now our text is kinda small, and say I want to make a book. I need a <b>Title</b> and a <b>Chapter Title</b>.<br>Lets add a Header to our Webpage. You Can Use the&lt;h1> Tag for that. <br> the 1 In &lt;h1> Is THe Size, 1 is the biggest 6 is the smallest. I'm Going to add a title and a Chapter to My Code:</p>
+	<p>So right now our text is kinda small, and say I want to make a book. I need a <b>Title</b> and a <b>Chapter Title</b>.<br>Lets add a Header to our Webpage. You can use the &lt;h1> tag for that. <br> the 1 In &lt;h1> is the size, 1 is the biggest 6 is the smallest. I'm going to add a title and a chapter to my code:</p>
 	  <div class="code"><p>&lt;!DOCTYPE html>
    <br>
    &lt;html>
@@ -238,11 +250,11 @@ He was so mad that he was beaten by a 3rd grader</p>
 	&lt;h1>Jhon and the Speedy Kid&lt;/h1>
    <br>
 	&lt;h3>Chapter 1: the Loss&lt;/h3>
-   &lt;p>John slammed the door shut &lt;br> He Was So Mad that He Was Beaten By a 3rd Grader&lt;/p>
+   &lt;p>John slammed the door shut &lt;br> he was so mad that he was beaten by a 3rd grader&lt;/p>
    <br>
-   &lt;p>"Are you okay up There?" His Mom Called&lt;/p>
+   &lt;p>"Are you okay up there?" His Mom called&lt;/p>
    <br>
-   &lt;p>"Doing Great" John said sarcastically&lt;/p>
+   &lt;p>"Doing great" John said sarcastically&lt;/p>
    <br>
    &lt;/body>
    <br>
@@ -250,13 +262,13 @@ He was so mad that he was beaten by a 3rd grader</p>
    </p></div>
 	<p>here's what it would look like:</p>
 	<div class="codeex"><h1>John and the speedy Kid</h1>
-<h3>Chapter 1:theLoss</h3>
-<p>John slammed the door shut <br> He Was So Mad that He Was Beaten By a 3rd Grader</p>
-<p>"Are you okay up There?" His Mom Called</p>
-<p>"Doing Great" John said sarcastically</p>
+<h3>Chapter 1: The Loss</h3>
+<p>John slammed the door shut <br> He was so mad that he was beaten by a 3rd grader</p>
+<p>"Are you okay up there?" His mom called</p>
+<p>"Doing great" John said sarcastically</p>
    </div>
 	<h3 id="l5">Lesson 5: CSS</h3>
-<p> Now that You Know how to Get text On Your screen You Might Want to start Changing the colors of the background and text, right?<br>For that we are going to need CSS, First lets add a &lt;style> tag underneath or &lt;title> tag in our head:</p>
+<p> Now that you know how to get text on your screen you might want to start changing the colors of the background and text, right?<br>For that we are going to need CSS, First lets add a &lt;style> tag underneath or &lt;title> tag in our head:</p>
   <div class="code"><p>&lt;!DOCTYPE html>
    <br>
    &lt;html>
@@ -278,18 +290,18 @@ He was so mad that he was beaten by a 3rd grader</p>
 	<br>
 	&lt;h1>Jhon and the speedy Kid&lt;/h1>
    <br>
-	&lt;h3>Chapter 1:theLoss&lt;/h3>
-   &lt;p>John slammed the door shut &lt;br> He Was So Mad that He Was Beaten By a 3rd Grader&lt;/p>
+	&lt;h3>Chapter 1: The Loss&lt;/h3>
+   &lt;p>John slammed the door shut &lt;br> he was so mad that he was beaten by a 3rd grader&lt;/p>
    <br>
-   &lt;p>"Are you okay up There?" His Mom Called&lt;/p>
+   &lt;p>"Are you okay up there?" His Mom called&lt;/p>
    <br>
-   &lt;p>"Doing Great" John said sarcastically&lt;/p>
+   &lt;p>"Doing great" John said sarcastically&lt;/p>
    <br>
    &lt;/body>
    <br>
    &lt;/html>
    </p></div>
-	<p>Lets say I want to make my background a nice paper white and my text black, what Iam going to do is underneath style write: body{color:; background-color:;} make sure to use the curly brackets "{}", here's an example:</p>
+	<p>Lets say I want to make my background a nice paper white and my text black, what I am going to do is underneath style write: body{color:; background-color:;} make sure to use the curly brackets "{}", here's an example:</p>
 <div class="code"><p>&lt;!DOCTYPE html>
    <br>
    &lt;html>
@@ -318,7 +330,7 @@ He was so mad that he was beaten by a 3rd grader</p>
 	<br>
 	&lt;h1>Jhon and the speedy Kid&lt;/h1>
    <br>
-	&lt;h3>Chapter 1:theLoss&lt;/h3>
+	&lt;h3>Chapter 1: The Loss&lt;/h3>
    &lt;p>John slammed the door shut &lt;br> He Was So Mad that He Was Beaten By a 3rd Grader&lt;/p>
    <br>
    &lt;p>"Are you okay up There?" His Mom Called&lt;/p>
@@ -331,7 +343,7 @@ He was so mad that he was beaten by a 3rd grader</p>
    </p></div>
 	<p>here's what that would look like:</p>
 	<div class="codeex" style="background-color:rgb(255, 255, 255); color:rgb(0, 0, 0);"><h1>John and the speedy Kid</h1>
-<h3>Chapter 1:theLoss</h3>
+<h3>Chapter 1: The Loss</h3>
 <p>Jhon slammed the door shut <br> He Was So Mad that He Was Beaten By a 3rd Grader</p>
 <p>"Are you okay up There?" His Mom Called</p>
 <p>"Doing Great" John said sarcastically</p>
@@ -460,9 +472,145 @@ He was so mad that he was beaten by a 3rd grader</p>
 	<li>Xbox</li>
 	<li>Playstation</li>
 	</ol>
-	Or you could use an unorginized list. <br>to Start an organized list use the &lt;ol> 
+	<p>Or you could use an unorginized list which is not. <br>To start an organized list use the &lt;ol> tag, and us &lt;li> to make a item on the list.<br> Here is an example:</p>
+	 <div class="code"><p>&lt;!DOCTYPE html>
+   <br>
+   &lt;html>
+   <br>
+   &lt;head>
+   <br>
+   &lt;meta charset="utf-8">
+   <br>
+   &lt;title>Example&lt;/title>
+   <br>
+   &lt;/head>
+   <br>
+   &lt;body>
+   <br>
+	&lt;p>Top 5 Gaming Consoles&lt;/p>
+	<br>
+	&lt;ol>
+   <br>
+	&lt;li>Xbox Series X&lt;/li>
+	<br>
+	&lt;li>Nintendo Switch&lt;/li>
+	<br>
+	&lt;li>Nintendo 3DS&lt;/li>
+	<br>
+	&lt;li>Playstation 5&lt;/li>
+	<br>
+	&lt;li>My Play And Watch Game Pad!!!!!&lt;/li>
+	<br>
+	&lt;/ol>
+	<br>
+   &lt;/body>
+   <br>
+   &lt;/html>
+   </div>
+	<p>Heres what that would look like:</p>
+	<div class="codeex">
+<p>Top 5 Gaming Consoles</p>
+<ol>
+<li>Xbox Series X</li>
+<li>Nintendo Switch</li>
+<li>Nintendo 3DS</li>
+<li>Playstation 5</li>
+<li>My Play And Watch Game Pad!!!!!</li>
+</ol></div>
 	<h3 id="l9">Lesson 9: Unorginized Lists</h3>
-    </div><div id="footer"><p>Big Thanks to <a href="https://pikapower9080.github.io/">Pikapower9080</a> For Teaching Me the Ins and Out's Of HTML, check him out now or i will eat all of your cookies!.<br><p><a target="_blank" href="https://icons8.com/icon/86796/circle">Circle</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></p><br><p>Well, that's all For Now. If you have any ideas for things I could add then <span title="No, My DM's are not open. In Fact I Don't even have any DMs.">my DMs are open</span></p>
+	<p>Unorganized lists are like organized lists except instead of numbers next to the items there is bullet points and instead of using &lt;ol>, you use &lt;ul>, crazy, I know right! If you need an example for some reason keep on going down but if you dont go to <a href="#l10">lesson 10: Images</a><br>To start an unorganized list use the &lt;ul> tag, and us &lt;li> to make a item on the list.<br> Here is an example:</p>
+	 <div class="code"><p>&lt;!DOCTYPE html>
+   <br>
+   &lt;html>
+   <br>
+   &lt;head>
+   <br>
+   &lt;meta charset="utf-8">
+   <br>
+   &lt;title>Example&lt;/title>
+   <br>
+   &lt;/head>
+   <br>
+   &lt;body>
+   <br>
+	&lt;p>Ingreedients to make a human being&lt;/p>
+	<br>
+	&lt;ul>
+   <br>
+	&lt;li>Eyes&lt;/li>
+	<br>
+	&lt;li>Ears&lt;/li>
+	<br>
+	&lt;li>Mouth&lt;/li>
+	<br>
+	&lt;li>Nose&lt;/li>
+	<br>
+	&lt;li>Toes&lt;/li>
+	<br>
+	&lt;/ul>
+	<br>
+   &lt;/body>
+   <br>
+   &lt;/html>
+   </div>
+	<p>Heres what that would look like:</p>
+	<div class="codeex">
+<p>Ingreedients to make a human being</p>
+<ul>
+<li>Eyes</li>
+<li>Ears</li>
+<li>Mouth</li>
+<li>Nose</li>
+<li>Toes</li>
+</ul></div>
+	<h3 id="l10">Lesson 10: Images</h3>
+	<p>To Add An Image Use The &lt;img> tag. In side it put src="". So like this: &lt;img src="">. then inside of the quotation marks put an image adress. Example:</p>
+	<div class="code"><p>&lt;!DOCTYPE html>
+   <br>
+   &lt;html>
+   <br>
+   &lt;head>
+   <br>
+   &lt;meta charset="utf-8">
+   <br>
+   &lt;title>Example&lt;/title>
+   <br>
+   &lt;/head>
+   <br>
+   &lt;body>
+   <br>
+	&lt;img src="https://caproductions.github.io/home/assets/html/Dog.png">&lt;/img>
+   <br>
+   &lt;/body>
+   <br>
+   &lt;/html>
+   </p></div>
+	<p>Heres what that would look like:</p>
+	<div class="codeex"><img src="https://caproductions.github.io/home/assets/html/Dog.png"></div>
+	<p>Yay! it worked, but it is a little on the big side. to fix that to the left of src put width="#" and replace<br> the # with how wide it should be (the browser will automaticlly put the height to the correct amount so it isnt streached or squashed). <br> Here is an example:</p>
+	<div class="code"><p>&lt;!DOCTYPE html>
+   <br>
+   &lt;html>
+   <br>
+   &lt;head>
+   <br>
+   &lt;meta charset="utf-8">
+   <br>
+   &lt;title>Example&lt;/title>
+   <br>
+   &lt;/head>
+   <br>
+   &lt;body>
+   <br>
+	&lt;img src="https://caproductions.github.io/home/assets/html/Dog.png" width="100">&lt;/img>
+   <br>
+   &lt;/body>
+   <br>
+   &lt;/html>
+   </p></div>
+	<p>Heres what that would look like:</p>
+	<div class="codeex"><img src="https://caproductions.github.io/home/assets/html/Dog.png" width="100"></div>
+    </div><div id="footer"><p>Big Thanks to <a href="https://pikapower9080.github.io/">Pikapower9080</a> For Teaching Me the Ins and Out's Of HTML, Check them out or i will eat <b>ALL</b> of your cookies.<br><p><a target="_blank" href="https://icons8.com/icon/86796/circle">Circle</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></p><br><p>Well, that's all For Now. If you have any ideas for things I could add then <span title="No, My DM's are not open. In Fact I Don't even have any DMs.">my DMs are open</span></p>
 	 </div></body>
 </html>
 
