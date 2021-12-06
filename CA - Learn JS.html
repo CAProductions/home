@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta chartset="UTF-8">
+        <title>CA - Learn JS</title>
+        <style>
+            body {
+                color:rgb(255, 255, 255);
+                background-color:rgb(0, 0, 0);
+            }
+            a {
+                color:rgb(127,127,255);
+                font-weight:bold
+                text-decoration:underline
+            }
+            .code{
+                padding:0px 10px;
+                border:3px solid white;
+                border-radius:10px;
+                text-align:left;
+                width:1000px;
+                height:250px;
+                overflow-x:auto;
+                overflow-y:auto;
+            }
+				.code:hover{
+					 background-color:rgb(40, 40, 40);
+				}
+            <script src="processing-1.6.6.min.js"></script>
+        </style>
+    </head>
+    <body>
+        <h1>CA - Learn JS</h1>
+        <h2>Chapter 1 - The Basics</h2>
+        <p>JavaScript is very different from HTML in amny ways, mainly that it does not use &lt;p&gt; tags, or any others. However, JavaScript does use semicolons after every statement. So, to get started, create a blank HTML file like this:</p>
+        <div class="code">
+            <p>
+                &lt;!DOCTYPE html&gt; <br>
+                &lt;html&gt; <br>
+                &nbsp;&nbsp;&lt;head&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;JavaScript&lt;Title&gt; <br>
+                &nbsp;&nbsp;&lt;/head&gt; <br>
+                &nbsp;&nbsp;&lt;body&gt; <br>
+                <br>
+                <br>
+                <br>
+                &nbsp;&nbsp;&lt;/body&gt; <br>
+                &nbsp;&nbsp;&lt;/html&gt;
+            </p>
+        </div>
+        <p>To insert JavaScript into a HTML file, use the &lt;script&gt; and &lt;/script&gt; tags, like this:</p>
+        <div class="code">
+            <p>
+                &lt;!DOCTYPE html&gt; <br>
+                &lt;html&gt; <br>
+                &nbsp;&nbsp;&lt;head&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;JavaScript&lt;Title&gt; <br>
+                &nbsp;&nbsp;&lt;/head&gt; <br>
+                &nbsp;&nbsp;&lt;body&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt;<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt; <br>
+                &nbsp;&nbsp;&lt;/body&gt; <br>
+                &lt;/html&gt;
+        </div>
+        <p></p>
+        <h2>Chapter 2 - The Language</h2>
+        <p>JS is very different from HTML. For example, instead of using &lt;tags&gt;, it uses a ; after every statement. Some of the most frequently used statements are: <br>
+            <br>
+            if () { <br>
+            }; <br>
+            <br>
+            while () { <br>
+            }; <br>
+            <br>
+            text(); <br>
+            <br>
+            rect(); <br>
+            <br>
+            var; <br>
+            <br>
+            and many more. For now, we will be creating a simple pop-up. But, in order to use commands such as text(); rect(); and others, we need a canvas to draw on and the ProcessingJS library. So, at the beginning of each program, add </p>
+        <div class="code">
+            <p>
+                &nbsp;&nbsp;&lt;script src="processing-1.6.6.min.js"&gt;&lt;/script&gt; <br>
+                &lt;/head&gt; <br>
+                &lt;body&gt; <br>
+                &nbsp;&nbsp;&lt;p align="center"&gt; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;canvas id="canvas"&gt;&lt;/canvas&gt; <br>
+                &nbsp;&nbsp;&lt;/p&gt;
+            </p>
+        </div>
+        <p>(The &lt;/head&gt; and &lt;body&gt; tags are just to show where the code is, but they are already there.) And, at the end, add <br> </p>
+        <div class="code">
+            <p>
+                &lt;/body&gt;
+                &lt;script&gt;
+                var canvas = document.getelementbyid("canvas");
+                var processingInstance = new ()
+                &lt;/script&gt;
+            </p>
+        </div>
+        <p>So, let's start learning! First, you need to know the basic setup. </p>
+        <h2>Chapter 3 - </h2>
+        <p></p>
+        <h2>Resources</h2>
+        <a href="https://khanacademy.org">Khan Academy</a>
+    </body>
+</html>
