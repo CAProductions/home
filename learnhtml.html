@@ -140,7 +140,8 @@ $(document).ready(function(){
   });
 });
 </script>
-		  <div id="runner" style="width:80%; height:75%; background-color:black; color:white; font-size:15px; position:fixed; top:50%; left:50%; border:8px solid white; border-radius:6px; transform: translate(-50%, -50%); z-index:95;"><div class="body"><p>This Is a HTML Veiwer/compiler I stole from <a href="https://pikapower9080.github.io/">Pikapower9080</a>. If you want to use styles, use the style attribute.<br> EX: &lt;p style="color:white; font-size:40px; text-decoration:underline;">Very nice text&lt;/p></p> <textarea placeholder="Your html here.. Don't include a body, html, or head tag" id="codeinput">
+		  <div id="runner" style="width:80%; height:75%; background-color:black; color:white; font-size:15px; position:fixed; top:50%; left:50%; border:8px solid white; border-radius:6px; transform: translate(-50%, -50%); z-index:95; overflow-x:auto;
+                overflow-y:auto;"><div class="body"><p>This Is a HTML Veiwer/compiler I stole from <a href="https://pikapower9080.github.io/">Pikapower9080</a>. If you want to use styles, use the style attribute.<br> EX: &lt;p style="color:white; font-size:40px; text-decoration:underline;">Very nice text&lt;/p></p> <textarea placeholder="Your html here.. Don't include a body, html, or head tag" id="codeinput">
 <h1>Check Out <a href="https://pikapower9080.github.io/">Pikapower9080's</a> Coolio Website, YAY!</h1>
     </textarea>
     <button onclick="update()" id="runbutton">Run!</button>
