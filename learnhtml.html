@@ -1,15 +1,17 @@
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>CA - Learn HTML</title>
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <style>
             body{
                 background-color:black;
                 color:white;
                 text-align:left;
             }
-            #body{
+            .body{
                 padding:0px 30px;
             }
 				#footer{
@@ -54,6 +56,18 @@
                 border-width:103px;
                 color:white;
             }
+				.header_html{
+                padding:6px 6px;
+                background-color:rgb(255, 10, 10);
+                border-radius:7px;
+                border-width:0px;
+                color:white;
+					 position:fixed;
+					 right:10px; top:60px;
+					 z-index:104; 
+					 font-size:2em;
+					 font-weight:bold;
+            }
             .navi_link{
                 text-decoration:none;
                 color:white;
@@ -83,6 +97,30 @@
 details > summary::-webkit-details-marker {
   display: none;
 }
+#codehere{
+  border-style: solid;
+  padding: 3px 3px 3px 3px;
+}
+#codeinput{
+  width: 90%;
+  max-width: 99%;
+  height: 200px;
+  max-height: 350px;
+  min-height: 80px;
+  min-width: 50px;
+  background-color:black;
+  color:white;
+  border-color:white;
+}
+#runbutton{
+  background-color: limegreen;
+  width: 99%;
+  border-style: none;
+  text-align: center;
+  color: white;
+  font-size: large;
+  border-radius: 5px;
+}
         </style>
 		  <link rel="icon" href="assets/main/favicon-96.png">
 
@@ -95,7 +133,29 @@ details > summary::-webkit-details-marker {
 	<div id="page_zoom" onclick="this.style.display='none'" style="display:block; font-size:40px; position:fixed; top:50%; left:50%; border:20px solid white; transform: translate(-50%, -50%);"><h3>Set page zoom to 100%</h3><p>To get the best experience out of our website we recommend that you set the page zoom to 100%.</p>
 	<p id="got_it" style="border:1px solid white; border-radius:7px; text-align:center; width:50%; text-align:center; transform: translate(50%, 50%);">Got it!</p></div>
 	
-    <details class="header" style="background-color:red; position:fixed; right:320px; top:11px; z-index:102; font-size:2em; ">
+	  <button class="header_html" id="runnertoggle">HTML preview</button><script>
+$(document).ready(function(){
+  $("button#runnertoggle").click(function(){
+    $("div#runner").toggle("medium");
+  });
+});
+</script>
+		  <div id="runner" style="width:80%; height:75%; background-color:black; color:white; font-size:15px; position:fixed; top:50%; left:50%; border:8px solid white; border-radius:6px; transform: translate(-50%, -50%); z-index:95;"><div class="body"><p>This Is a HTML Veiwer/compiler I stole from <a href="https://pikapower9080.github.io/">Pikapower9080</a>. If you want to use styles, use the style attribute.<br> EX: &lt;p style="color:white; font-size:40px; text-decoration:underline;">Very nice text&lt;/p></p> <textarea placeholder="Your html here.. Don't include a body, html, or head tag" id="codeinput">
+<h1>Check Out <a href="https://pikapower9080.github.io/">Pikapower9080's</a> Coolio Website, YAY!</h1>
+    </textarea>
+    <button onclick="update()" id="runbutton">Run!</button>
+    <hr>
+    <div id="codehere">
+      <h1>Your code will appear here!</h1>
+    </div><script>
+var codeinput = document.getElementById("codeinput")
+var output = document.getElementById("codehere")
+
+function update(){
+  output.innerHTML = codeinput.value
+}
+</script></div> </div>
+	 <details class="header" style="background-color:red; position:fixed; right:320px; top:11px; z-index:102; font-size:2em; ">
        <summary>
            <b>Jump To</b>
        </summary>
@@ -119,7 +179,7 @@ details > summary::-webkit-details-marker {
 		 
       </ul></div>
    </details>
-  <div id="body"><br><br><br><br><br> <h2 id="top">A step to step guide on HTML web page design</h2>
+  <div class="body"><br><br><br><br><br> <h2 id="top">A step to step guide on HTML web page design</h2>
    <p>When you first start off with a new website add this base to it</p>
    <br>
    <div class="code"><p>&lt;!DOCTYPE html>
@@ -611,6 +671,10 @@ He was so mad that he was beaten by a 3rd grader</p>
 	<p>Heres what that would look like:</p>
 	<div class="codeex"><img src="https://caproductions.github.io/home/assets/html/Dog.png" width="100"></div>
     </div><div id="footer"><p>Big Thanks to <a href="https://pikapower9080.github.io/">Pikapower9080</a> For Teaching Me the Ins and Out's Of HTML, Check them out or i will eat <b>ALL</b> of your cookies.<br><p><a target="_blank" href="https://icons8.com/icon/86796/circle">Circle</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></p><br><p>Well, that's all For Now. If you have any ideas for things I could add then <span title="No, My DM's are not open. In Fact I Don't even have any DMs.">my DMs are open</span></p>
-	 </div></body>
+	 </div>
+	  <script>
+   $("div#runner").toggle();
+  </script>
+  </body>
 </html>
 
