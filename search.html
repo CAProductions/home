@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>hcpss.me</title>
+  <link rel="icon" href="https://hcpss.me/images/hcpss-logo-outlined.png">
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+body{
+background-color:black;
+}
+#iframe{
+border:5px solid white;
+border-radius:6px;
+}
+#url_area, #height_area{
+resize:none;
+all: unset;
+  font: 16px system-ui;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  padding: 6px 10px;
+}
+span {
+  background-color:red;
+  width: 300px;
+  height: 44px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+::placeholder {
+  color: #fff;
+  opacity: 0.7; 
+}
+button {
+  all: unset;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+}
+
+svg {
+  color: #fff;
+  fill: currentColor;
+  width: 24px;
+  height: 24px;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+<span>
+<input type="search" id="url_area" placeholder="URL" width="70%" title="Put a full URL here, include the ''https://'' part of the URL. Some sights might not work">
+<button id="btn" width="20%">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 171 171"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,171.99075v-171.99075h171.99075v171.99075z" fill="none"></path><g fill="#000000"><path d="M85.5,17.1c-37.70876,0 -68.4,30.69124 -68.4,68.4c0,37.70876 30.69124,68.4 68.4,68.4c37.70876,0 68.4,-30.69124 68.4,-68.4c0,-37.70876 -30.69124,-68.4 -68.4,-68.4zM85.5,28.5c2.24075,0 4.56251,0.92818 7.21406,3.39551c2.65155,2.46733 5.39567,6.44657 7.74844,11.62266c1.74816,3.84596 3.17471,8.50572 4.4086,13.48184h-38.74219c1.23388,-4.97612 2.66044,-9.63588 4.4086,-13.48184c2.35277,-5.17608 5.09689,-9.15533 7.74844,-11.62266c2.65155,-2.46732 4.97331,-3.39551 7.21406,-3.39551zM63.20098,33.01992c-1.07279,1.82912 -2.10407,3.73164 -3.03926,5.78906c-2.43718,5.36178 -4.39316,11.51091 -5.867,18.19102h-18.13535c6.15328,-10.65256 15.61609,-19.13479 27.0416,-23.98008zM107.79902,33.01992c11.42552,4.84529 20.88832,13.32752 27.0416,23.98008h-18.13535c-1.47383,-6.6801 -3.42982,-12.82924 -5.86699,-18.19102c-0.93519,-2.05743 -1.96647,-3.95995 -3.03926,-5.78906zM31.10508,68.4h21.25254c-0.67004,5.47278 -1.05762,11.183 -1.05762,17.1c0,5.917 0.38758,11.62722 1.05762,17.1h-21.25254c-1.68702,-5.39541 -2.60508,-11.13868 -2.60508,-17.1c0,-5.96132 0.91806,-11.70459 2.60508,-17.1zM63.96914,68.4h43.06172c0.74342,5.43827 1.26914,11.10056 1.26914,17.1c0,5.99944 -0.52572,11.66174 -1.26914,17.1h-43.06172c-0.74342,-5.43826 -1.26914,-11.10056 -1.26914,-17.1c0,-5.99944 0.52572,-11.66173 1.26914,-17.1zM118.64238,68.4h21.25254c1.68702,5.39541 2.60508,11.13868 2.60508,17.1c0,5.96132 -0.91806,11.70459 -2.60508,17.1h-21.25254c0.67004,-5.47278 1.05762,-11.183 1.05762,-17.1c0,-5.917 -0.38758,-11.62722 -1.05762,-17.1zM36.15938,114h18.13535c1.47383,6.6801 3.42982,12.82924 5.867,18.19101c0.93519,2.05743 1.96647,3.95995 3.03926,5.78906c-11.42552,-4.84528 -20.88832,-13.32751 -27.0416,-23.98008zM66.1289,114h38.74219c-1.23388,4.97612 -2.66044,9.63588 -4.4086,13.48183c-2.35277,5.17608 -5.09689,9.15533 -7.74844,11.62266c-2.65155,2.46732 -4.97331,3.39551 -7.21406,3.39551c-2.24075,0 -4.56251,-0.92818 -7.21406,-3.39551c-2.65155,-2.46732 -5.39567,-6.44657 -7.74844,-11.62266c-1.74816,-3.84596 -3.17471,-8.50572 -4.4086,-13.48183zM116.70527,114h18.13535c-6.15328,10.65256 -15.61608,19.13479 -27.0416,23.98008c1.07279,-1.82911 2.10407,-3.73164 3.03926,-5.78906c2.43718,-5.36177 4.39316,-11.51091 5.86699,-18.19101z"></path></g></g></svg>
+</button>
+<br>
+<input type="search" id="height_area" placeholder="Height" title="set the height of the website (default, 725)" >
+<button id="btn2" width="20%">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 171 171"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,171.99075v-171.99075h171.99075v171.99075z" fill="none"></path><g fill="#000000"><path d="M119.91375,5.13c-0.77484,0.10687 -1.49625,0.4943 -2.03063,1.06875l-111.47062,111.47063c-1.32258,1.33594 -1.32258,3.47344 0,4.80937l41.78813,41.78813c0.64125,0.66797 1.53633,1.04203 2.45812,1.04203c0.9218,0 1.81688,-0.37406 2.45813,-1.04203l111.47063,-111.47062c1.32258,-1.33594 1.32258,-3.47344 0,-4.80938l-41.78813,-41.78812c-0.16031,-0.20039 -0.33398,-0.37406 -0.53437,-0.53437c-0.60117,-0.38742 -1.30922,-0.57445 -2.03063,-0.53437c-0.10688,0 -0.21375,0 -0.32063,0zM120.34125,13.46625l36.97875,36.97875l-106.66125,106.55438l-36.97875,-36.87187l9.72563,-9.72562l8.33625,8.33625l4.91625,-4.91625l-8.33625,-8.33625l8.76375,-8.76375l18.59625,18.59625l4.91625,-4.91625l-18.59625,-18.59625l8.76375,-8.76375l8.33625,8.33625l4.91625,-4.91625l-8.33625,-8.33625l8.76375,-8.76375l18.59625,18.59625l4.91625,-4.91625l-18.59625,-18.59625l8.76375,-8.76375l8.33625,8.33625l4.91625,-4.91625l-8.33625,-8.33625l8.76375,-8.76375l18.59625,18.59625l4.91625,-4.91625l-18.59625,-18.59625l8.76375,-8.76375l8.33625,8.33625l4.91625,-4.91625l-8.33625,-8.33625z"></path></g></g></svg></button>
+</span>
+<iframe id="iframe" frameborder="5" width="100%" allow="fullscreen"></iframe>
+<script>
+ $(document).ready(function () {
+$("#btn").click(function () {
+var txt = $("#url_area").val();
+$('#iframe').attr('src', txt);
+});
+});
+</script>
+<script>
+ $(document).ready(function () {
+$("#btn2").click(function () {
+var hgt = $("#height_area").val();
+$('#iframe').attr('height', hgt);
+});
+});
+</script>
+</body>
+</html>
