@@ -16,7 +16,7 @@
             }
 				#footer{
 					background-color:maroon;
-					padding:;
+					padding:8px;
 				}
 				a{
 				color:white;
@@ -141,7 +141,7 @@ $(document).ready(function(){
 });
 </script>
 		  <div id="runner" style="width:80%; height:75%; background-color:black; color:white; font-size:15px; position:fixed; top:50%; left:50%; border:8px solid white; border-radius:6px; transform: translate(-50%, -50%); z-index:95; overflow-x:auto;
-                overflow-y:auto;"><div class="body"><p>This Is a HTML Veiwer/compiler I stole from <a href="https://pikapower9080.github.io/">Pikapower9080</a>. If you want to use styles, use the style attribute.<br> EX: &lt;p style="color:white; font-size:40px; text-decoration:underline;">Very nice text&lt;/p></p> <textarea placeholder="Your html here.. Don't include a body, html, or head tag" id="codeinput">
+                overflow-y:auto;"><div class="body"><p>This Is a HTML Veiwer/compiler I stole from <a href="https://pikapower9080.github.io/">Pikapower9080</a>. If you want to use styles,make sure that they are inline styles by using the style attribute.<br> EX: &lt;p style="color:white; font-size:40px; text-decoration:underline;">Very nice text&lt;/p>.<br> When making your own webpage NEVER use inline styles, it really makes it complicated to see and edit your page and makes it harder for other people to help you if you have any issues with CSS or other parts of your page.</p> <textarea placeholder="Your html here.. Don't include a body, html, or head tag" id="codeinput">
 <h1>Check Out <a href="https://pikapower9080.github.io/">Pikapower9080's</a> Coolio Website, YAY!</h1>
     </textarea>
     <button onclick="update()" id="runbutton">Run!</button>
@@ -175,8 +175,9 @@ function update(){
 		 <li>Comming Soon!</li>
 		 <li><a class="navi_link" href="#l11">Lesson 11: Links</a></li>
     	 <li><a class="navi_link" href="#l12">Lesson 12: Customizing links with CSS</a></li>
-		 <li><a class="navi_link" href="#l13">Lesson 13: The &lt;span> and &lt;div> tags </a></li>
-		 <li><a class="navi_link" href="#l14">Lesson 14: Borders </a></li>
+        <li><a class="navi_link" href="#l13">Lesson 13: iFrames</a></li>
+		 <li><a class="navi_link" href="#l4">Lesson 14: The &lt;span> and &lt;div> tags </a></li>
+		 <li><a class="navi_link" href="#l15">Lesson 15: Borders </a></li>
 		 
       </ul></div>
    </details>
@@ -409,6 +410,7 @@ He was so mad that he was beaten by a 3rd grader</p>
 <p>"Are you okay up There?" His Mom Called</p>
 <p>"Doing Great" John said sarcastically</p>
    </div>
+   <p>Instead of using "rgb(255, 255, 255)" you could just use color:red; that would work as well</p>
 	<h3 id="l6">Lesson 6: Id Selectors</h3>
 	<p> if you only want to change the style of one paragraph or header you can use an id. If you were to use one in a paragraph the tag would look like: &lt;p id="p1">. Then In your style section you can reference just that id using #youridname then all the stuff you would normally out after it here is an example:</p>
 	<div class="code"><p>&lt;!DOCTYPE html>
