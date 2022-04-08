@@ -1,10 +1,5 @@
 
 var name, action, xp, lvl, b_hp, b_xp, b_name, b_atck, hp, heals, atck_n, def_n, def, atck, c1, c2, c3, c4, c5 ,c6;
-/*
-javascript:document.getElementsByTagName('head')[0].appendChild(document.createElement('script')).setAttribute('src','http://www.cs.huji.ac.il/~irush/scripts/antsbml.js');
-
-Piano:
-*/
 atck = 0
 atck_n = "none"
 def = 0
