@@ -12,7 +12,6 @@ def_n = "none"
 hp = 12
 xp = 0
 heals = 5
-alert(heals)
 name = prompt("What is your name, adventurer?");
 alert("You awake to find yourself sleeping in a water bed in a dimly lit cavern");
 alert(name + ", " + name + "...");
