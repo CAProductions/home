@@ -35,37 +35,37 @@
             <button class="shop_btn" onclick="if (shop==1){shop=0}else{shop=1}; update()">
                 <img src="assets/svg/BuildingTab.svg">
             </button>
-            <button onclick="buycursor()" class="buy_building" style="height:25%; width:49%;">
+            <button onclick="buycursor(), update()" class="buy_building" style="height:25%; width:49%;">
                 <img src="assets/svg/Cursor.svg">
                 <h3>Cursor</h3>
                 <h4 id="cursor">50 cookies</h4>
                 <p><b>Bake one cookie every click</b><br>+1 Click power</p>
             </button>
-            <button onclick="hireperson()" class="buy_building" style="height:25%; width:49%;">
+            <button onclick="hireperson(), update()" class="buy_building" style="height:25%; width:49%;">
                 <img src="assets/svg/Worker.svg">
                 <h3>Worker</h3>
                 <h4 id="worker">300 cookies</h4>
                 <p><b>Hire a worker to make cookies</b><br>+1 Cookie per sec</p>
             </button>
-            <button onclick="buyfarm()" class="buy_building" style="height:25%; width:49%;">
+            <button onclick="buyfarm(), update()" class="buy_building" style="height:25%; width:49%;">
                 <img src="assets/svg/Pitchfork.svg">
                 <h3>Cookie Pitchfork</h3>
                 <h4 id="pitchfork">2000 cookies</h4>
                 <p><b>Farm Cookies</b><br>+10 Cookies per sec</p>
             </button>
-            <button onclick="buycutter()" class="buy_building" style="height:25%; width:49%;">
+            <button onclick="buycutter(), update()" class="buy_building" style="height:25%; width:49%;">
                 <img src="assets/svg/CookieCutter.svg">
                 <h3>Cookie Cutter</h3>
                 <h4 id="cutter">5000 cookies</h4>
                 <p><b>Cut cookies even faster</b><br>+15 Cookies per click</p>
             </button>
-            <button onclick="buyfactory()" class="buy_building" style="height:25%; width:49%;">
+            <button onclick="buyfactory(), update()" class="buy_building" style="height:25%; width:49%;">
                 <img src="assets/svg/Factory.svg">
                 <h3>Factory</h3>
                 <h4 id="factory">25000 cookies</h4>
                 <p><b>Churn out cookies crazy fast</b><br>+30 Cookies per second</p>
             </button>
-            <button onclick="buyad()" class="buy_building" style="height:25%; width:49%;">
+            <button onclick="buyad(), update()" class="buy_building" style="height:25%; width:49%;">
                 <img src="assets/svg/advertizment.svg">
                 <h3>Advertizements</h3>
                 <h4 id="ad">100000 cookies</h4>
