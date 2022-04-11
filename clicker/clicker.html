@@ -8,7 +8,7 @@
     <script src="assets/script/cookies.js"></script>
     <script src="assets/script/shop.js"></script>
     <script>
-        setInterval(cps, 10), loadgame(), setInterval(updatelocalstorage, 60000)
+        setInterval(cps, 10), if (localstorage.length!==0){loadgame()}, setInterval(updatelocalstorage, 60000)
     </script>
     <style>
         body {
