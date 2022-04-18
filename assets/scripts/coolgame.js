@@ -11,18 +11,18 @@ Story
 ****/
 response = putils.forcePrompt("Start Game (y/n)?", "y", "Enter a valid answer.");
 pName = putils.forcePrompt("What is your name, adventurer?", "Link", "Enter a valid answer.");
-alert("You wake up in a dark room.");
-if (putils.forcePrompt(pName+" sees a strange device. Pick it up (y/n)?", "y", "Enter a valid answer.") == "y") {
+alert(`${pName} wake up in a dark room.`);
+if (putils.forcePrompt(`${pName} sees a strange device. Pick it up (y/n)?`, "y", "Enter a valid answer.") == "y") {
     pickUp("Sheikah Slate", "magic", null);
-    alert(pName+" walks out of the room and into the sunlight");
-    if (forcePrompt(pName+" sees a stick. Pick it up (y/n)?") == "y"){
+    alert(`${pName} walks out of the room and into the sunlight`);
+    if (putils.forcePrompt(`${pName} sees a stick. Pick it up (y/n)?`) == "y"){
         pickUp("Stick", "atk", 1);
-        alert("Great! Now "+pName+" has a weapon!");
-    } else { alert("Oh well. "+pName+" will probably find another soon."); }
+        alert(`Great! Now ${pName} has a weapon!`);
+    } else { alert(`Oh well. ${pName} will probably find another soon.`); }
     alert(pName+" hears a rustling in the woods.");
     battle("Red Bokoblin", 3, 3, 0.5, 0, {"name":"Boko Club", "type": "atk", "stat": 4});
 } else {
-    damage(999999999999999999999999999999999, pName+" didn't pick up the Slate, and it killed "+pName+" with magic.", "p")
+    damage(999999999999999, `${pName} didn't pick up the Slate, and it killed ${pName} with magic.`, "p")
 }
 
 /********
@@ -31,10 +31,10 @@ FUNCTIONS
 function battle(eName, eHp, eMHp, eAtk, eDef, eDrop, eXp) {
     //Start
     win = null;
-    alert("A "+eName+" has attacked! It has "+eAtk+" atk and "+eDef+"def.");
+    alert(`A ${eName} has attacked! It has ${eAtk} atk and ${eDef}def.`);
     while (!win) {
         //Enemy Attack
-        damage(calcAtk(eAtk, pDef), eName+" attacks, doing "+calcAtk(eAtk, pDef)+" damage. "+pName+" is now at "+pHp+"/"+pMHp+" health.", "p");
+        damage(calcAtk(eAtk, pDef), `${eName} attacks, doing ${calcAtk(eAtk, pDef)} damage. ${pName} is now at ${pHp}/${pMHp} health.`, "p");
         if (win) {
             //Player Dead
         }
@@ -81,7 +81,7 @@ function damage(amt, message, type){
         pHp -= amt;
         if (pHp <= 0) {
             win == type;
-            alert(message+"\n GAME OVER");
+            alert(`${message}\n GAME OVER`);
         }
     } else if (type == "e") {
         eHp -= amt;
@@ -92,7 +92,7 @@ function damage(amt, message, type){
 }
 function getXp (amt){
     pXp += amt;
-    alert(pName+" got "+amt+" xp!");
+    alert(`${pName} got ${amt} xp!`);
 }
 function item(type, stat){
     if (type == "atk"){
