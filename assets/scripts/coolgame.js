@@ -6,7 +6,6 @@ document.getElementsByTagName('head')
 var pMHp, pHp, pIn, response, pName, pXp, pAtk, pDef, win;
 pMHp = 3;
 pHp  = 3;
-
 /****
 Story
 ****/
@@ -15,22 +14,33 @@ pName = putils.forcePrompt("What is your name, adventurer?", "Link", "Enter a va
 alert("You wake up in a dark room.");
 if (putils.forcePrompt("You see a strange device. Pick it up (y/n)?", "y", "Enter a valid answer.") == "y") {
     pickUp("Sheikah Slate", "magic", null);
+
 } else {
+    damage(999999999999999999999999999999999, "You didn't pick up the Slate, and it killed you.", "p")
 }
 
 /********
 FUNCTIONS
 ********/
-function battle(eName, eHp, eMHp, eAtk, eDef) {
+function battle(eName, eHp, eMHp, eAtk, eDef, eDrop, eXp) {
     //Start
+    win = null;
     alert("A "+eName+" has attacked! It has "+eAtk+" atk and "+eDef+"def.");
-    //Enemy Attack
-    damage(calcAtk(eAtk, pDef), eName+" attacks, doing "+calcAtk(eAtk, pDef)+" damage. "+pName+" is now at "+pHp+"/"+pMHp+" health.", "p");
-    if (win == "e") {
-        //Player Dead
+    while (!win) {
+        //Enemy Attack
+        damage(calcAtk(eAtk, pDef), eName+" attacks, doing "+calcAtk(eAtk, pDef)+" damage. "+pName+" is now at "+pHp+"/"+pMHp+" health.", "p");
+        if (win) {
+            //Player Dead
+        }
+        //Player attacks
+        damage(calcAtk(pAtk, eDef), pName+" attacks, doing "+calcAtk(pAtk, eDef)+" damage. "+eName+" is now at "+eHp+"/"+eMHp+" health.", "e");
+        if (win) {
+            //Enemy Dead
+            alert("You killed the "+eName+"!");
+            pickUp(eDrop.name, eDrop.type, eDrop.stat);
+            getXp(eXp);
+        }
     }
-    //Player attacks
-    damage(calcAtk(pAtk, eDef), pName+" attacks, doing "+calcAtk(pAtk, eDef)+" damage. "+eName+" is now at "+eHp+"/"+eMHp+" health.", "e");
 }
 function pickUp(iName, iType, iStat) {
     //Add item to inventory.
@@ -45,10 +55,8 @@ function pickUp(iName, iType, iStat) {
 }
 function calcAtk(atk, def) {
     var dam = atk;
-    if (def >= atk) { dam = 0; } else {
-        for (let ind = 0; ind < def; ind++) {
-            dam -= 1/ind;
-        }
+    if (def >= atk) { dam = 0.25; } else {
+        dam = atk-def;
     }
     return dam;
 }
@@ -57,12 +65,17 @@ function damage(amt, message, type){
     if (type == "p"){
         pHp -= amt;
         if (pHp <= 0) {
-            win == "e";
+            win == type;
+            alert(message+"\n GAME OVER");
         }
     } else if (type == "e") {
         eHp -= amt;
         if (eHp <= 0){
-            win == "p";
+            win == type;
         }
     }
+}
+function getXp (amt){
+    pXp += amt;
+    alert(pName+" got "+amt+" xp!");
 }
