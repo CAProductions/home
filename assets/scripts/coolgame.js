@@ -1,8 +1,6 @@
 /****
 Setup
 ****/
-document.getElementsByTagName('head')
-[0].appendChild(document.createElement('script')).setAttribute('src','https://cdn.jsdelivr.net/gh/pikapower9080/pikapower9080.github.io/assets/modules/utils.js');
 var pMHp, pHp, pIn, response, pName, pXp, pAtk, pDef, win;
 pMHp = 12;
 pHp  = 12;
