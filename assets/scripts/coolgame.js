@@ -9,24 +9,21 @@ pHp  = 12;
 /****
 Story
 ****/
-game();
-function game(){
-    response = putils.forcePrompt("Start Game (y/n)?", "y", "Enter a valid answer.");
-    pName = putils.forcePrompt("What is your name, adventurer?", "Link", "Enter a valid answer.");
-    alert(`${pName} wakes up in a dark room.`);
-    if (putils.forcePrompt(`${pName} sees a strange device. Pick it up (y/n)?`, "y", "Enter a valid answer.") == "y") {
-        pickUp("Sheikah Slate", "magic", null);
-        alert(`${pName} walks out of the room and into the sunlight`);
-        if (forcePrompt(`${pName} sees a stick. Pick it up (y/n)?`) == "y"){
-            pickUp("Stick", "atk", 2);
-            alert(`Great! Now ${pName} has a weapon!`);
-        } else { alert(`Oh well. ${pName} will probably find another soon.`); }
-        alert(`${pName} hears a rustling in the woods.`);
-        defEnemy("Red Boko", 6, 0, item("Boko Club", "atk", 6));
-        defEnemy("Keese" , 1, 0, [item("Keese Wing", "item", null), item("Keese Eye", "item", null)]);
-    } else {
-        damage(999999999999999999999999999999999, `${pName} didn't pick up the device, and it killed ${pName} with magic.`, "p")
-    }
+response = putils.forcePrompt("Start Game (y/n)?", "y", "Enter a valid answer.");
+pName = putils.forcePrompt("What is your name, adventurer?", "Link", "Enter a valid answer.");
+alert(`${pName} wakes up in a dark room.`);
+if (putils.forcePrompt(`${pName} sees a strange device. Pick it up (y/n)?`, "y", "Enter a valid answer.") == "y") {
+    pickUp("Sheikah Slate", "magic", null);
+    alert(`${pName} walks out of the room and into the sunlight`);
+    if (forcePrompt(`${pName} sees a stick. Pick it up (y/n)?`) == "y"){
+        pickUp("Stick", "atk", 2);
+        alert(`Great! Now ${pName} has a weapon!`);
+    } else { alert(`Oh well. ${pName} will probably find another soon.`); }
+    alert(`${pName} hears a rustling in the woods.`);
+    defEnemy("Red Boko", 6, 0, item("Boko Club", "atk", 6));
+    defEnemy("Keese" , 1, 0, [item("Keese Wing", "item", null), item("Keese Eye", "item", null)]);
+} else {
+    damage(999999999999999999999999999999999, `${pName} didn't pick up the device, and it killed ${pName} with magic.`, "p")
 }
 /********
 FUNCTIONS
@@ -155,19 +152,15 @@ A "library" that makes your vanilla js life easier
 ========================== Usage =======================
 Add the following to your <head> tag
 <script src="https://cdn.jsdelivr.net/gh/pikapower9080/pikapower9080.github.io/assets/modules/utils.js"></script>
-
 Check out the full documentation! https://pikapower9080.github.io/resources/putils-docs
-
 Now you're good to go! Any embedded or external scripts can use the library!
 Here's what you can do:
 Both getElement(id) and g(id) can be used instead of document.getElementById()
-
 GENERAL:
 You can use putils.execute("console.log('i am some code')") to execute a string
 You can use putils.randomInt(10, 20) to pick a random number between 10 and 20
 You can use putils.createElementIn(type, parent) to create an element with a parent in one line of code
 You can use putils.forcePrompt("This is the prompt message", "This is the default response", "This is the message that shows when you fail to enter a valid value") to create a prompt that will only accept real values
-
 Dialog things:
 You can use putils.alertModal("Message that supports <em>HTML formatting</em>", ["an", "optional", "list", "of", "classes", "for", "your", "dialog"]) to create a temporary dialog modal (not supported in some browsers!!!)
 You can use putils.confirmModal((result) => { console.log(result) }, "Message that supports <em>HTML formatting</em>", "OK", "Cancel", "(ok button css)", "(cancel button css)", ["an", "optional", "list", "of", "classes", "for", "your", "dialog"]) to create a fancy confirm() modal. All options are optional and have default values.
@@ -176,10 +169,8 @@ You can style the alertModal with the class .putils-modal-alert
 You can style the confirmModal with the class .putils-modal-confirm
 You can style both modals with the class .putils-modal
 You can style the toast with .putils-toast
-
 ARRAY FUNCTIONS:
 putils.array.pickrandom(array) - Pick a random value from an array
-
 */
 
 // Faster ways to document.getElementById()
