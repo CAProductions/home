@@ -4,27 +4,30 @@ Setup
 document.getElementsByTagName('head')
 [0].appendChild(document.createElement('script')).setAttribute('src','https://cdn.jsdelivr.net/gh/pikapower9080/pikapower9080.github.io/assets/modules/utils.js');
 var pMHp, pHp, pIn, response, pName, pXp, pAtk, pDef, win;
-pMHp = 3;
-pHp  = 3;
+pMHp = 12;
+pHp  = 12;
 /****
 Story
 ****/
-response = putils.forcePrompt("Start Game (y/n)?", "y", "Enter a valid answer.");
-pName = putils.forcePrompt("What is your name, adventurer?", "Link", "Enter a valid answer.");
-alert(`${pName} wakes up in a dark room.`);
-if (putils.forcePrompt(`${pName} sees a strange device. Pick it up (y/n)?`, "y", "Enter a valid answer.") == "y") {
-    pickUp("Sheikah Slate", "magic", null);
-    alert(`${pName} walks out of the room and into the sunlight`);
-    if (forcePrompt(`${pName} sees a stick. Pick it up (y/n)?`) == "y"){
-        pickUp("Stick", "atk", 2);
-        alert(`Great! Now ${pName} has a weapon!`);
-    } else { alert(`Oh well. ${pName} will probably find another soon.`); }
-    alert(`${pName} hears a rustling in the woods.`);
-    battle("Red Bokoblin", 3, 3, 0.5, 0, {"name":"Boko Club", "type": "atk", "stat": 4});
-} else {
-    damage(999999999999999999999999999999999, `${pName} didn't pick up the device, and it killed ${pName} with magic.`, "p")
+game();
+function game(){
+    response = putils.forcePrompt("Start Game (y/n)?", "y", "Enter a valid answer.");
+    pName = putils.forcePrompt("What is your name, adventurer?", "Link", "Enter a valid answer.");
+    alert(`${pName} wakes up in a dark room.`);
+    if (putils.forcePrompt(`${pName} sees a strange device. Pick it up (y/n)?`, "y", "Enter a valid answer.") == "y") {
+        pickUp("Sheikah Slate", "magic", null);
+        alert(`${pName} walks out of the room and into the sunlight`);
+        if (forcePrompt(`${pName} sees a stick. Pick it up (y/n)?`) == "y"){
+            pickUp("Stick", "atk", 2);
+            alert(`Great! Now ${pName} has a weapon!`);
+        } else { alert(`Oh well. ${pName} will probably find another soon.`); }
+        alert(`${pName} hears a rustling in the woods.`);
+        defEnemy("Red Boko", 6, 0, item("Boko Club", "atk", 6));
+        defEnemy("Keese" , 1, 0, [item("Keese Wing", "item", null), item("Keese Eye", "item", null)]);
+    } else {
+        damage(999999999999999999999999999999999, `${pName} didn't pick up the device, and it killed ${pName} with magic.`, "p")
+    }
 }
-
 /********
 FUNCTIONS
 ********/
@@ -34,25 +37,27 @@ function battle(eName, eHp, eMHp, eAtk, eDef, eDrop, eXp) {
     alert(`A ${eName} has attacked! It has ${eAtk} atk and ${eDef} def.`);
     while (!win) {
         //Enemy Attack
-        damage(calcAtk(eAtk, pDef), eName+` attacks, doing `+calcAtk(eAtk, pDef)+` damage. `+pName+` is now at `+pHp+`/`+pMHp+` health.`, `p`);
+        damage(calcAtk(eAtk, pDef), `${eName} attacks, doing ${calcAtk(eAtk, pDef)} damage. ${pName} is now at ${pHp}/${pMHp} health.`, "p");
         if (win) {
             //Player Dead
         }
-        response = forcePrompt(`What does `+pName+` want to do? (Atk/Item)`);
-        if (response == `Atk`){
+        response = forcePrompt(`What does ${pName} want to do? (Atk/Item)`);
+        if (response == "Atk"){
             //Player attacks
-            damage(calcAtk(pAtk, eDef), pName+` attacks, doing `+calcAtk(pAtk, eDef)+` damage. `+eName+` is now at `+eHp+`/`+eMHp+` health.`, `e`);
+            
+            damage(calcAtk(pAtk, eDef), `${pName} attacks, doing ${calcAtk(pAtk, eDef)} damage. ${eName} is now at ${eHp}/${eMHp} health.`, "e");
             if (win) {
                 //Enemy Dead
-                alert(`You killed the `+eName+`!`);
+                alert(`You killed the ${eName}!`);
                 pickUp(eDrop.name, eDrop.type, eDrop.stat);
                 getXp(eXp);
             }
-        } else if(response == `item`) {
+        } else if(response == "item") {
             var text = "";
             for(let ind = 0; ind<pIn.length; ind++){
-                text = text + pIn[ind].name + "";
+                text = text + "(" + ind + "): " + pIn[ind].name + "\n";
             }
+            putils.forcePrompt("Choose an item: \n\n"+text);
         }
     }
 }
@@ -61,16 +66,19 @@ function pickUp(iName, iType, iStat) {
     pIn.push({"type": iType, "name": iName, "stat": iStat});
     if (iStat == null) {
         //The item is not usable currently.
-        alert(pName+` picked up a(n) `+iName+`!`);
+        alert(`${pName} picked up a(n) ${iName}!`);
     } else {
         //The item is usable.
-        alert(`${pName} picked up a(n) `+iName+`!`+` \n It does/has `+iStat+` `+iType+`.`);
+        alert(`${pName} picked up a(n) ${iName}! \n It does/has ${iStat} ${iType}.`);
     }
 }
 function calcAtk(atk, def) {
     var dam = atk;
     if (def >= atk) { dam = 0.25; } else {
         dam = atk-def;
+    }
+    if(putils.randomInt(0, 8)){
+        dam *= 4;
     }
     return dam;
 }
@@ -80,9 +88,9 @@ function damage(amt, message, type){
         pHp -= amt;
         if (pHp <= 0) {
             win == type;
-            alert(message+`\n GAME OVER`);
+            alert(`${message} \n GAME OVER`);
         }
-    } else if (type == `e`) {
+    } else if (type == "e") {
         eHp -= amt;
         if (eHp <= 0){
             win == type;
@@ -91,15 +99,41 @@ function damage(amt, message, type){
 }
 function getXp (amt){
     pXp += amt;
-    alert(pName+` got `+amt+` xp!`);
+    alert(`${pName} got ${amt} xp!`);
 }
-function item(type, stat){
-    if (type == `atk`){
+function useItem(index){
+    let name = pIn[index].name;
+    let type = pIn[index].type;
+    let stat = pIn[index].stst;
+    if (type == "atk"){
         atk = stat;
-    } else if (type == `def`){
+        alert(`Y${pName}ou equipped the ${name}.`);
+    } else if (type == "def"){
         def = stat;
+        alert(`${pName} equipped the ${name}.`);
+    } else if (type == "food"){
+        pHp += stat;
+        alert(`${pName} ate the ${name}.`);
+    } else {
+        alert("That item is not currently useable.");
+    }
+
+}
+function defEnemy(type, atk, def, drop){
+    if(type == "Red Boko"){
+        battle("Red Bokoblin", 13, 13, atk, def, drop, 5);
+    }
+    if(type == "Keese"){
+        battle("Keese", 1, 1, atk, def, drop, 1);
     }
 }
+function item(name, type, stat){
+    return {"name": name, "type": type, "stat": stat};
+}
+
+
+
+
 
 
 
