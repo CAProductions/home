@@ -1,4 +1,239 @@
-<h1>Cool Stuff</h1>
-<p>Copy and paste this into the URL of a bookmark to be able to edit websites:</p>
-<pre>javascript:document.body.contentEditable = 'true'; document.designMode='on'; void 0</pre>
-<p></p>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cool Stuffies</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+body{
+background-color:black;
+color:white;
+text-align:center;
+font-size:20px;
+}
+details{
+color:white;
+font-size:20px;
+text-align:center;
+}
+.codesnipit{
+overflow:auto;
+border-radius: 5px;
+  border-style: solid;
+  border-color: lightgray;
+  border-width: 1px;
+  padding-left: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background-color: black;
+  white-space: nowrap;
+  transition:300ms;
+}
+.codesnipit:hover{
+background-color:rgb(47,47,47);
+}
+.copy_button{
+font-size:20px;
+padding:6px;
+background-color:rgb(0, 155,0);
+border:solid 3px white;
+color:white;
+border-radius:7px;
+transition:500ms;
+width:200px;
+}
+.copy_button:hover{
+background-color:green;
+color:white;
+width:280px;
+}
+</style>
+<script>
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+</script>
+</head>
+<body><div id="padding">
+<h1><img src="assets/svg/star_outline_white.svg">Javascript Bookmarks<img src="assets/svg/star_outline_white.svg"></h1>
+<details>
+<summary>
+Browsers
+</summary>
+
+<h2>Full Browser</h2>
+<p>Browser so you can search up test answers<br><span style="font-size:.75em;">(browser has more features but may be laggier and less stable)</span></p>
+<img src="assets/img/full_browser.png" height="200px">
+<br>
+<button class="copy_button" onclick="copyToClipboard('#full_browser')">Copy Command</button>
+<div class="codesnipit">
+<p id="full_browser">
+javascript:var website="https://bing.com",div=document.createElement("div"),iframe=document.createElement("iframe");iframe.src=website,div.setAttribute("style","position: fixed; width: 60%; height: 60%; border-width: 2px; border-radius: 3px; border-color: black; border-style: solid; left: 0; top: 0; z-index: 100; resize: both; overflow: auto;"),iframe.setAttribute("style","width: 100%; height: 100%; bottom: 0; border: none; padding-top: 20px;");var closebtn=document.createElement("label");closebtn.setAttribute("style","position: absolute; top: 0; right: 0; padding-right: 10px; padding-bottom: 3px; font-size: 14px; cursor:pointer;"),closebtn.setAttribute("onclick","div.remove()"),closebtn.innerHTML="(x)",div.appendChild(iframe),div.appendChild(closebtn);var urlform=document.createElement("form"),urllabel=document.createElement("input");urllabel.type="url",urllabel.value="https://bing.com/",urllabel.required=!0,urllabel.validationMessage="You must input a url!",urllabel.setAttribute("style","user-select: none; position: absolute; font-family: sans; left: 0; width: 90%; padding-right: 20px; top: 0; padding-left: 5px; height: 14px; border: none; background-color: white; color: black;"),urllabel.setAttribute("disabled","disabled"),urlform.appendChild(urllabel),div.append(urlform),document.body.appendChild(div),iframe.addEventListener("load",(function(){urllabel.removeAttribute("disabled"),urllabel.value=iframe.src})),urlform.addEventListener("submit",(function(e){e.preventDefault(),iframe.src=urllabel.value,urllabel.setAttribute("disabled","disabled")}));
+</p>
+</div>
+
+<h2>Close lite browsers</h2>
+<p>use to close the lite browsers<br></p>
+<button class="copy_button" onclick="copyToClipboard('#close_browser')">Copy Command</button>
+<br>
+<div class="codesnipit">
+<p id="close_browser">
+javascript:var element = document.getElementById("browser"); element.parentNode.removeChild(element);</p>
+</div>
+
+<h2>Mini Browser (lite)</h2>
+<p>Mini browser so you can do sneaky things in class :o<br><span style="font-size:.75em;">(runs better than full browser)</span></p>
+<img src="assets/img/mini_browser.png" height="200px">
+<br>
+<button class="copy_button" onclick="copyToClipboard('#mini_browser')">Copy Command</button>
+<br>
+<div class="codesnipit">
+<p id="mini_browser">
+javascript:var answer = prompt ("what website? (include the ''https://'' part.)"); answer = answer ; javascript:((function()%7Bvar body,iframe,src;src=answer,iframe=document.createElement("iframe"),iframe.setAttribute("src",src),iframe.setAttribute("id","browser"),iframe.setAttribute("style","position: fixed; z-index: 999999; width: 50%; height: 75%; right: 10px; top: 10px; border: 5px solid black; border-radius:6px; overflow: hidden; background-color: #fff;"), body=document.getElementsByTagName("body")[0], body.appendChild(iframe)})).call(this)
+</p>
+</div>
+
+
+<h2>Full-Screen Browser (lite)</h2>
+<p>Chonk browser so you can watch youtube unblocked?!?!?!??!?!?!<br><span style="font-size:.75em;">(Runs better than full browser, takes up full screen)</span></p>
+<img src="assets/img/fullscreen_browser.png" height="200px">
+<br>
+<button class="copy_button" onclick="copyToClipboard('#fullscreen_browser')">Copy Command</button>
+<br>
+<div class="codesnipit">
+<p id="fullscreen_browser">
+javascript:var answer = prompt ("what website? (include the ''https://'' part.)"); answer = answer ; javascript:((function()%7Bvar body,iframe,src;src=answer,iframe=document.createElement("iframe"),iframe.setAttribute("src",src),iframe.setAttribute("id","browser"),iframe.setAttribute("style","position: fixed; z-index: 999999; width: 100%; height: 100%; right: 10px; top: 10px; border: 5px solid black; border-radius:6px; overflow: hidden; background-color: #fff;"), body=document.getElementsByTagName("body")[0], body.appendChild(iframe)})).call(this)
+</p>
+</div>
+<h2>Preloaded Browser</h2>
+<p>Quickly Acsess your fav Sites</p>
+<textarea id="full_custom">
+
+</textarea>
+<br>
+<button class="copy_button" onclick="btn1()">Copy Command</button>
+<div class="codesnipit">
+<p id="full_browser_custom">
+javascript:((function()%7Bvar body,iframe,src;src="https://fewfube.fom",iframe=document.createElement("iframe"),iframe.setAttribute("src",src),iframe.setAttribute("id","browser"),iframe.setAttribute("style","position: fixed; z-index: 999999; width: 100%; height: 100%; right: 10px; top: 10px; border: 5px solid black; border-radius:6px; overflow: hidden; background-color: #fff;"), body=document.getElementsByTagName("body")[0], body.appendChild(iframe)})).call(this)
+</p>
+<script>
+  function btn1 () {
+    var custom1 = document.getElementById(`full_custom`).value
+    document.getElementById(`full_browser_custom`).innerText = `javascript:((function()%7Bvar body,iframe,src;src="${custom1}",iframe=document.createElement("iframe"),iframe.setAttribute("src",src),iframe.setAttribute("id","browser"),iframe.setAttribute("style","position: fixed; z-index: 999999; width: 100%; height: 100%; right: 10px; top: 10px; border: 5px solid black; border-radius:6px; overflow: hidden; background-color: #fff;"), body=document.getElementsByTagName("body")[0], body.appendChild(iframe)})).call(this)`
+    copyToClipboard('#full_browser_custom')
+  }
+</script>
+</div>
+
+</details>
+
+<details>
+<summary>
+Cloaks
+</summary>
+
+<h2>Custom Cloak</h2>
+<p>Cloaks Tabs so they show up differently<br><span style="font-size:.75em;">(will not trick Lightspeed or GoGaurdian)</span></p>
+<button class="copy_button" onclick="copyToClipboard('#custom_cloak')">Copy Command</button>
+<br>
+<div class="codesnipit">
+<p id="custom_cloak">
+javascript:var img_url = prompt ("Image URL"); var tab_name = prompt ("Tab Name"); function gcloak() { var link = document.querySelector("link[rel*='icon']") || document.createElement('link');link.type = 'image/x-icon';link.rel = 'shortcut icon';link.href = img_url ;document.title = tab_name ;console.log(document.title);document.getElementsByTagName('head')[0].appendChild(link) };gcloak();setInterval(gcloak, 1000);
+</p>
+</div>
+
+<h2>Quick Cloak</h2>
+<p>Quickly cloaks Tabs so they show up differently<br><span style="font-size:.75em;">(Change the "enter image url here", and "enter tab name" to the things you want them to be then run the command)</span></p>
+<button class="copy_button" onclick="copyToClipboard('#quick_cloak')">Copy Command</button>
+<br>
+<div class="codesnipit">
+<p id="quick_cloak">
+javascript:var img_url = "enter image url here"; var tab_name = "enter tab name"; function gcloak() { var link = document.querySelector("link[rel*='icon']") || document.createElement('link');link.type = 'image/x-icon';link.rel = 'shortcut icon';link.href = img_url ;document.title = tab_name ;console.log(document.title);document.getElementsByTagName('head')[0].appendChild(link) };gcloak();setInterval(gcloak, 1000);
+</p>
+</div>
+</details>
+<details>
+<summary>
+Page 
+</summary>
+
+<h2>Activate Page Edit</h2>
+<p>Allows you to edit pages to trick your friends<br><span style="font-size:.75em;">(will reset on reload)</span></p>
+<button class="copy_button" onclick="copyToClipboard('#edit_on')">Copy Command</button>
+<br>
+<div class="codesnipit">
+<p id="edit_on">
+javascript:document.body.contentEditable = 'true'; document.designMode='on'; void 0
+</p>
+</div>
+
+<h2>Deactivate Page Edit</h2>
+<p>turns off the page edit<br></p>
+<button class="copy_button" onclick="copyToClipboard('#edit_off')">Copy Command</button>
+<br>
+<div class="codesnipit">
+<p id="edit_off">
+javascript:document.body.contentEditable = 'false'; document.designMode='off'; void 0
+</p>
+</div>
+
+<h2>Veiw & Edit HTML</h2>
+<p>Allows you to veiw HTML elements and change there code<br></p>
+<button class="copy_button" onclick="copyToClipboard('#html_edit')">Copy Command</button>
+<br>
+<div class="codesnipit">
+<p id="html_edit">
+  javascript:(function () {var script=document.createElement('script');script.src='https://x-ray-goggles.mouse.org/webxray.js';script.className='webxray';script.setAttribute('data-lang','en-US');script.setAttribute('data-baseuri','https://x-ray-goggles.mouse.org');document.body.appendChild(script);}())
+</p>
+</div>
+
+<h2>Developer Console</h2>
+<p>Opens a developer console to debug webpages<br><span style="font-size:.75em;">(made by Snowlord7)</span></p>
+<button class="copy_button" onclick="copyToClipboard('#console')">Copy Command</button>
+<br>
+<div class="codesnipit">
+<p id="console">
+  javascript:(function()%7B(function() %7Bvar x %3D document.createElement("script")%3Bx.src %3D "https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSnowLord7%2Fdevconsole%40master%2Fmain.js"%3Bx.onload %3D alert("Loaded Developer Console!")%3Bdocument.head.appendChild(x)%3B%7D)()%7D)()
+</p>
+</div>
+
+</details>
+<details>
+<summary>
+Other 
+</summary>
+
+<h2>Play Snake</h2>
+<p>Allows you to play snake in a popup window<br><span style="font-size:.75em;">(press "p" to start)</span></p>
+<button class="copy_button" onclick="copyToClipboard('#play_snake')">Copy Command</button>
+<br>
+<div class="codesnipit">
+<p id="play_snake">
+javascript:Q=64;m=b=Q*Q;a=[P=l=u=d=p=S=w=0];u=89;f=(h=j=t=(b+Q)/2)-1;(B=(D=document).body).appendChild(x=D.createElement("p"));(X=x.style).position="fixed";X.left=X.top=0;X.background="#FFF";x.innerHTML="&lt;p>&lt;/p>&lt;canvas>";v=(s=x.childNodes)[0];(s=s[1]).width=s.height=5*Q;c=s.getContext("2d"); onkeydown=onblur=F=function(e,g){g?a[f]?(w+=m,f=Math.random(l+=8)*(R=Q-2)*R|(u=0),F(f+=Q+1+2*(f/R|0),g)):F(f):0>e?(l?--l:(y=t,t=a[t]-2,F(y)),S+=(w*=0.8)/4,m=999/(u++ +10),a[h+=[-1,-Q,1,Q][d=p]]?B.removeChild(x,alert("Game Over")):(F(h),F(e,j=h),v.innerHTML=P?(setTimeout(F,50,e,0),S|0):"Press P")):-e?(y=(a[e]=e&lt;Q|e>=Q*Q-Q|!(e%Q)|e%Q==Q-1|2*(e==h))+(e==f),e==h&&(a[j]=2+h),c.fillStyle="hsl("+99*!a[e]+","+2*m+"%,"+50*y+"%)",c.fillRect(e%Q*5,5*(e/Q|0),5,5)):isNaN(y=e.keyCode-37)|43==y?(P=y&&!P)&&F(-1): p=!P|y&-4|!(y^2^d)?p:y;return!1};for(;--b;F(b));void F(-1);</p>
+</div>
+
+<h2>Auto Clicker</h2>
+<p>clicks elements on the page REALLY fast<br><span style="font-size:.75em;">(will not work on everthing and may lag out some pages)</span></p>
+<button class="copy_button" onclick="copyToClipboard('#auto_click')">Copy Command</button>
+<br>
+<div class="codesnipit">
+<p id="auto_click">
+javascript:var DELAY = 0;var autoClickerStyleElement = document.createElement("style");autoClickerStyleElement.innerHTML="*{cursor: crosshair !important;}";document.body.appendChild(autoClickerStyleElement);function addClicker(e) {if(!e.isTrusted) {return;}if(e.target.classList.contains("auto-clicker-target")) {e.target.classList.remove("auto-clicker-target");} else {e.target.classList.add("auto-clicker-target");}document.body.removeChild(autoClickerStyleElement);document.body.removeEventListener("click", addClicker);e.preventDefault();autoClick(e.target);}function autoClick(element) {if(element.classList.contains("auto-clicker-target")) {element.click();setTimeout(function(){ autoClick(element); }, DELAY);}}document.body.addEventListener("click", addClicker, 0);</p>
+</div>
+
+<h2>Find Wordle</h2>
+<p>Finds the wordle of the day</p>
+<button class="copy_button" onclick="copyToClipboard('#find_wordle')">Copy Command</button>
+<br>
+<div class="codesnipit">
+<p id="find_wordle">
+const _0x3dd094=_0x37dd;(function(_0x9cdd2b,_0x17a645){const _0x26eff6=_0x37dd,_0x4112cd=_0x9cdd2b();while(!![]){try{const _0x18b037=-parseInt(_0x26eff6(0xd5))/0x1+-parseInt(_0x26eff6(0xd6))/0x2+parseInt(_0x26eff6(0xce))/0x3*(parseInt(_0x26eff6(0xcc))/0x4)+parseInt(_0x26eff6(0xcf))/0x5*(-parseInt(_0x26eff6(0xcb))/0x6)+parseInt(_0x26eff6(0xcd))/0x7*(parseInt(_0x26eff6(0xca))/0x8)+-parseInt(_0x26eff6(0xd1))/0x9*(-parseInt(_0x26eff6(0xd7))/0xa)+-parseInt(_0x26eff6(0xd3))/0xb*(-parseInt(_0x26eff6(0xd4))/0xc);if(_0x18b037===_0x17a645)break;else _0x4112cd['push'](_0x4112cd['shift']());}catch(_0x37cda1){_0x4112cd['push'](_0x4112cd['shift']());}}}(_0x9e95,0x3dadb));function _0x37dd(_0x1b63dd,_0x551b60){const _0x9e9522=_0x9e95();return _0x37dd=function(_0x37ddb7,_0x2053e6){_0x37ddb7=_0x37ddb7-0xc9;let _0x16b67a=_0x9e9522[_0x37ddb7];return _0x16b67a;},_0x37dd(_0x1b63dd,_0x551b60);}const answercheat=JSON[_0x3dd094(0xc9)](localStorage[_0x3dd094(0xd0)](_0x3dd094(0xd8)));function _0x9e95(){const _0x37a139=['3371011FrZGQS','3yqdhUL','15mLbEGC','getItem','856701mYiyFE','solution','4543dDOZWN','6456DMQIPi','468820acnYoK','442826lUgFKF','30rsXCcr','nyt-wordle-state','parse','8mMxcPG','498678HRimrr','811492EQHwQM'];_0x9e95=function(){return _0x37a139;};return _0x9e95();}alert('The\x20answer\x20is\x20'+answercheat[_0x3dd094(0xd2)]);</p>
+</div>
+</details>
+</div></body>
+</html>
