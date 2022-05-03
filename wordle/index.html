@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wordle</title>
+        <style>
+            ::selection{
+background-color: rgb(95, 252, 63);    }
+            textarea{
+                resize: none;
+            }
+            html{
+                font-family: 'Roboto Mono', monospace;
+                text-align: center;
+            }
+            .guess_box{
+                position:absolute;
+                padding:25%, 30px;
+                font-size:60px;
+                font-family: 'Roboto Mono', monospace;
+                transition:100ms;
+                border:5px solid black;
+                border-radius: 7px;
+            }
+            tr{
+                width:20%;
+            }
+        </style>
+        <link rel="stylesheet" href="assets/styles/boxes.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">        
+            <script src="assets/scripts/toast.js"></script>
+            <link rel="stylesheet" href="assets/styles/toast.css">
+            <link rel="shortcut icon" href="https://www.nytimes.com/games/wordle/images/NYT-Wordle-Icon-192.png" type="image/x-icon">
+    </head>
+    <body id="body">
+<form id="controls" onsubmit="event.preventDefault(); check();">
+    <h1 id="write_h">Write: idk</h1>
+    <input type="text" id="textarea" cols="30" rows="1" maxlength="5" autofocus required>
+    <br>
+    <button type="submit">check</button>
+</form>
+       <div class="guess_box" id="b11">?</div>
+       <div class="guess_box" id="b12">?</div>
+       <div class="guess_box" id="b13">?</div>
+       <div class="guess_box" id="b14">?</div>
+       <div class="guess_box" id="b15">?</div>
+       <div class="guess_box" id="b21">?</div>
+       <div class="guess_box" id="b22">?</div>
+       <div class="guess_box" id="b23">?</div>
+       <div class="guess_box" id="b24">?</div>
+       <div class="guess_box" id="b25">?</div>
+       <div class="guess_box" id="b31">?</div>
+       <div class="guess_box" id="b32">?</div>
+       <div class="guess_box" id="b33">?</div>
+       <div class="guess_box" id="b34">?</div>
+       <div class="guess_box" id="b35">?</div>
+       <div class="guess_box" id="b41">?</div>
+       <div class="guess_box" id="b42">?</div>
+       <div class="guess_box" id="b43">?</div>
+       <div class="guess_box" id="b44">?</div>
+       <div class="guess_box" id="b45">?</div>
+       <div class="guess_box" id="b51">?</div>
+       <div class="guess_box" id="b52">?</div>
+       <div class="guess_box" id="b53">?</div>
+       <div class="guess_box" id="b54">?</div>
+       <div class="guess_box" id="b55">?</div>
+
+       <button id="btn" onclick="answer = prompt(`What should the answer be?`); if (answer.length==5){ alert(`answer is now ${answer}`);}">Set Answer</button>
+<button onclick="toggleMode()" id="mode_btn">Toggle Dark Mode</button>
+    </body>
+    <script src="assets/scripts/words.js"></script>
+    <script src="assets/scripts/main.js"></script>
+
+    </html>
