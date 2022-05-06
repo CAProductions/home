@@ -28,6 +28,16 @@ function toggleColors(){
     document.getElementById(`body`).style.backgroundColor = ("black")
     ui("white")
 }
+if(cv=="b3"){
+  document.getElementById(`body`).style.backgroundImage = ("linear-gradient(90deg, rgba(255,255,255,1) 13%, rgba(173,173,173,1) 100%)")
+  document.getElementById(`body`).style.backgroundColor = ("white")
+  ui("black")
+}
+if(cv=="b4"){
+  document.getElementById(`body`).style.backgroundImage = ("linear-gradient(90deg, #434343 0%, black 100%)")
+  document.getElementById(`body`).style.backgroundColor = ("white")
+  ui("white")
+}
 if(cv=="g1"){
   document.getElementById(`body`).style.backgroundImage = ("linear-gradient(90deg, blue, green)")
   document.getElementById(`body`).style.backgroundSize = ("initial")
@@ -74,6 +84,11 @@ if(cv=="g9"){
   document.getElementById(`body`).style.backgroundSize = ("initial")
   ui("black")
 }
+if(cv=="g10"){
+  document.getElementById(`body`).style.backgroundImage = ("radial-gradient(circle, rgba(246,159,218,1) 18%, rgba(225,180,248,1) 58%, rgba(219,232,252,1) 80%, rgba(255,255,255,1) 100%)")
+  document.getElementById(`body`).style.backgroundSize = ("initial")
+  ui("black")
+}
 if(cv=="i1"){
     document.getElementById(`body`).style.background = ("url('assets/img/background0.jpg')")
     document.getElementById(`body`).style.backgroundSize = ("800px")
@@ -89,6 +104,40 @@ if(cv=="i1"){
     document.getElementById(`body`).style.backgroundSize = ("800px")
     ui("black")
   }
+  if(cv=="dg1"){
+    document.getElementById(`body`).style.background = ("url('assets/img/dog1.png')")
+    document.getElementById(`body`).style.backgroundSize = ("100%")
+    ui("black")
+  }
+  if(cv=="dg2"){
+    document.getElementById(`body`).style.background = ("url('assets/img/dog2.png')")
+    document.getElementById(`body`).style.backgroundSize = ("100%")
+    ui("black")
+  }
+  if(cv=="dg3"){
+    document.getElementById(`body`).style.background = ("url('assets/img/dog3.png')")
+    document.getElementById(`body`).style.backgroundSize = ("100%")
+    ui("black")
+  }
+  if(cv=="s1"){
+    document.getElementById(`body`).style.background = ("url('assets/img/dog1.png')")
+    document.getElementById(`body`).style.backgroundSize = ("100%")
+    ui("black")
+  }
+  if(cv=="s2"){
+    document.getElementById(`body`).style.background = ("url('assets/img/dog2.png')")
+    document.getElementById(`body`).style.backgroundSize = ("100%")
+    ui("black")
+  }
+  if(cv=="s3"){
+    document.getElementById(`body`).style.background = ("url('assets/img/dog3.png')")
+    document.getElementById(`body`).style.backgroundSize = ("100%")
+    ui("black")
+  }
   localStorage.setItem(`bg`, cv)
   }
 c.onchange = toggleColors
+if(localStorage.length>0){
+  c.value = localStorage.getItem(`bg`)
+  toggleColors()
+}
