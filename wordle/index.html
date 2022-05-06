@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Wordle</title>
+        <title>Wordle Lite</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-16">
         <style>
             ::selection{
 background-color: rgb(95, 252, 63);    }
@@ -24,6 +25,23 @@ background-color: rgb(95, 252, 63);    }
             tr{
                 width:20%;
             }
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            #winscreen{
+                position:fixed;
+                top:50%;
+                left:50%;
+                transform: translate(-50%, -50%);
+                transition:5000ms;
+                background-color:gray;
+                border:black solid 3px;
+                border-radius:7px;
+                padding:100px, 50px;
+                display:none;
+                z-index: 10;
+                font-size:3.5em;
+            }
         </style>
         <link rel="stylesheet" href="assets/styles/boxes.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,10 +53,33 @@ background-color: rgb(95, 252, 63);    }
     </head>
     <body id="body">
 <form id="controls" onsubmit="event.preventDefault(); check();">
-    <h1 id="write_h">Write: idk</h1>
+    <h1 id="write_h">Wordle Lite</h1>
     <input type="text" id="textarea" cols="30" rows="1" maxlength="5" autofocus required>
     <br>
     <button type="submit">check</button>
+    <select id="colors">
+        <optgroup label="Basic">
+            <option value = "b1"> Light Mode </option>
+            <option value = "b2"> Dark mode </option>
+        </optgroup>
+        <optgroup label="Gradient">
+            <option value = "g1">Blue & Green</option>
+            <option value = "g2">Blue & Red</option>
+            <option value = "g3">Red & Yellow</option>
+            <option value = "g4">Portal</option>
+            <option value = "g5">Party</option>
+            <option value = "g6">Beach House</option>
+            <option value = "g7">Warm & Cozy</option>
+            <option value = "g8">Lemonade</option>
+            <option value = "g9">Cacti Canyon</option>
+        </optgroup>
+        <optgroup label="Reapeating Images">
+            <option value="i1">Image 1</option>
+            <option value="i2">Image 2</option>
+            <option value="i3">Image 3</option>
+    
+        </optgroup>
+        </select>
 </form>
        <div class="guess_box" id="b11">?</div>
        <div class="guess_box" id="b12">?</div>
@@ -65,11 +106,15 @@ background-color: rgb(95, 252, 63);    }
        <div class="guess_box" id="b53">?</div>
        <div class="guess_box" id="b54">?</div>
        <div class="guess_box" id="b55">?</div>
-
-       <button id="btn" onclick="answer = prompt(`What should the answer be?`); if (answer.length==5){ alert(`answer is now ${answer}`);}">Set Answer</button>
-<button onclick="toggleMode()" id="mode_btn">Toggle Dark Mode</button>
+       <div class="guess_box" id="b61">?</div>
+       <div class="guess_box" id="b62">?</div>
+       <div class="guess_box" id="b63">?</div>
+       <div class="guess_box" id="b64">?</div>
+       <div class="guess_box" id="b65">?</div>
+<div id="winscreen">Score</div>
     </body>
     <script src="assets/scripts/words.js"></script>
     <script src="assets/scripts/main.js"></script>
+    <script src="assets/scripts/bg.js"></script>
 
     </html>
