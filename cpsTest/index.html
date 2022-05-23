@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPS - Test</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body oncontextmenu="return false">
+    <h1 id="txt">Click to Start</h1>
+    <button id="btn" onclick="if(firstClick){start(); clicks += 1}else{if(time<maxTime){clicks += 1}}">Click to start</button><br>
+    <p  id="showTime">Time (Seconds)</p>
+    <input type="range" id="time" min="1" max="20" value="5">
+    <hr>
+    <p id="highscore">Max CPS</p>
+    <button onclick="clearHigh()">Clear Highscore</button><br>
+</body>
+<script src="main.js"></script>
+</html>
