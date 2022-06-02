@@ -1,6 +1,4 @@
 var name, action, xp, lvl, hp, heals, atck_n, def_n, def, atck_a, def_a, atc, rdm, inv;
-//import pikas utils
-document.getElementsByTagName('head')[0].appendChild(document.createElement('script')).setAttribute('src','https://raw.githubusercontent.com/pikapower9080/pikapower9080.github.io/main/assets/modules/utils.js');
 //functions
 function randomNum (min, max){
     if(!min || !max) { console.error("Use a valid min and max for random num."); return undefined }
@@ -40,7 +38,7 @@ function battle(ename, ehp, eatck, exp, canrun) {
 		/*Player Attacks*/
 		var action = "placeholderbeliek"
 		action = prompt("what action to do? (fight/heal/item/run)")
-		action = action.toLowerCase
+		action = action.toLowerCase()
 		if (action == "fight" || action == "f") {
 			if (randomNum(1, 10)==4){
 				ehp = ehp - atck*3
@@ -287,7 +285,9 @@ var	c5 = prompt("Take the old mans deal and defeat the lynel (1) or try to steal
 	alert(`''I will watch over you, take good care of yourself''`)
 	drop("Old Cane", 4.5, "weapon")
 }
-
+alert(`okay ummm i ran out of ideas so heres a super big bad guy`)
+	battle("The Radiance", 500, 50, 99, 0)
+	drop("scepter of light", 999, "weapon")
 }
 /*you didnt grab the Sheikah slate*/
 if (c1 == "n") {
