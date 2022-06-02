@@ -286,6 +286,7 @@ var	c5 = prompt("Take the old mans deal and defeat the lynel (1) or try to steal
 	drop("Old Cane", 4.5, "weapon")
 }
 alert(`okay ummm i ran out of ideas so heres a super big bad guy`)
+	hp = 9999
 	battle("The Radiance", 500, 50, 99, 0)
 	drop("scepter of light", 999, "weapon")
 }
