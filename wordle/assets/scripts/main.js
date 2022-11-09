@@ -1,21 +1,3 @@
-main.js
-Last month
-Oct 19
-
-You edited an item
-Javascript
-main.js
-Earlier this year
-Aug 30
-
-You edited an item
-Javascript
-main.js
-Jun 13
-
-You edited an item
-Javascript
-main.js
 if(localStorage.getItem(`games`)==undefined || localStorage.getItem(`games`)== null){
   localStorage.setItem(`win`, 0)
   localStorage.setItem(`loss`, 0)
